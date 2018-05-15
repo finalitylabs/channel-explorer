@@ -11,5 +11,5 @@ import Wallet from "./models/Wallet";
 const store = Todos.Todos.create({ todos: [] });
 const wallet = Wallet.Wallet.create({ balance: 0, transactions: [] });
 
-ReactDOM.render(<App store={store} wallet={wallet} />, document.getElementById("root") as HTMLElement);
+ReactDOM.render(<App store={store} wallet={wallet}/>, document.getElementById("root") as HTMLElement);
 // registerServiceWorker();

@@ -3,7 +3,10 @@ import "./App.css";
 import Todos from "./models/Todos";
 import Wallet from "./models/Wallet";
 
+
 import { observer } from "mobx-react";
+import Profile from "./components/Profile";
+import Main from './components/Main';
 
 @observer
 class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: typeof Wallet.Wallet.Type }> {
@@ -32,8 +35,11 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
 
   public render() {
     return (
-      <div>
-        <div>Balance {this.props.wallet.balance}</div>
+      
+      <div id='app-wrapper'>
+        <Profile />
+        <Main />
+        {/* <div>Balance {this.props.wallet.balance}</div>
         <form>
           <button type="submit" onClick={this.getBalance.bind(this)}>
             Get Balance
@@ -62,7 +68,7 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     );
   }
@@ -70,6 +76,7 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
 
 /*
 import logo from './logo.svg';
+import Main from './components/Main';
 
 class App extends React.Component {
   public render() {
