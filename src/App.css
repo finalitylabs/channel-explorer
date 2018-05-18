@@ -276,6 +276,33 @@
   height: 100%;
 }
 
+.eth-comp{
+  width: 100%;
+  height: 100%;
+  background: pink;
+  font-size: 78pt;
+}
+
+.hashlock-comp{
+  width: 100%;
+  height: 100%;
+  background: cyan;
+  font-size: 78pt;
+}
+
+.tokens-comp{
+  width: 100%;
+  height: 100%;
+  background: red;
+  font-size: 78pt;
+}
+
+.objects-comp{
+  width: 100%;
+  height: 100%;
+  background: gray;
+  font-size: 78pt;
+}
 
 
 

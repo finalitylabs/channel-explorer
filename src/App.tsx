@@ -1,5 +1,8 @@
 import * as React from "react";
 import "./App.css";
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import Todos from "./models/Todos";
 import Wallet from "./models/Wallet";
 
@@ -7,6 +10,7 @@ import Wallet from "./models/Wallet";
 import { observer } from "mobx-react";
 import Profile from "./components/Profile";
 import Main from './components/Main';
+import Navigation from './components/Navigation';
 
 @observer
 class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: typeof Wallet.Wallet.Type }> {
@@ -35,10 +39,14 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
 
   public render() {
     return (
-      
+      <Router>
       <div id='app-wrapper'>
         <Profile />
-        <Main />
+        <div className='main-wrapper'>
+          <Navigation />
+          <Main />
+        </div>
+        
         {/* <div>Balance {this.props.wallet.balance}</div>
         <form>
           <button type="submit" onClick={this.getBalance.bind(this)}>
@@ -70,6 +78,7 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
           })}
         </ul> */}
       </div>
+      </Router>
     );
   }
 }
@@ -90,6 +99,7 @@ class App extends React.Component {
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
       </div>
+      
     );
   }
 }
