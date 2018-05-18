@@ -21,7 +21,10 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "start-geth": "geth --rpc --rpcport 8545 --rpccorsdomain '*' --rpcapi='db,eth,net,web3,personal,web3,debug' --rinkeby console --light",
+    "create-rinkeby-account": "geth --rinkeby account new",
+    "start-all": "concurrently --names typescript,geth -p name 'npm start' 'npm run start-geth'"
   },
   "devDependencies": {
     "@machinomy/types-web3": "0.0.7",
@@ -29,6 +32,7 @@
     "@types/jest": "^22.2.3",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "concurrently": "^3.5.1",
     "tslint-config-prettier": "^1.12.0",
     "typescript": "^2.8.3"
   }
