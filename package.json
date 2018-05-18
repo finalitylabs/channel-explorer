@@ -18,13 +18,15 @@
     "web3": "^1.0.0-beta.34"
   },
   "scripts": {
+    "postinstall": "npm run install-geth",
+    "install-geth": "command -v geth >/dev/null 2>&1 || { echo >&2 'Geth not found: installing'; npm i -g geth; exit 0;}",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "start-geth": "geth --rpc --rpcport 8545 --rpccorsdomain '*' --rpcapi='db,eth,net,web3,personal,web3,debug' --rinkeby console --light",
+    "start-rinkeby": "geth --rpc --rpcport 8545 --rpccorsdomain '*' --rpcapi='db,eth,net,web3,personal,web3,debug' --rinkeby console --light",
     "create-rinkeby-account": "geth --rinkeby account new",
-    "start-all": "concurrently --names typescript,geth -p name 'npm start' 'npm run start-geth'"
+    "start-all": "concurrently --names typescript,geth -p name 'npm start' 'npm run start-rinkeby'"
   },
   "devDependencies": {
     "@machinomy/types-web3": "0.0.7",
