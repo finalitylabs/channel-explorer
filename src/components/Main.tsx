@@ -4,6 +4,7 @@ import Channel from './Channel';
 import Explorer from './Explorer';
 import CreateAgreement from './CreateAgreement';
 import PendingAgreement from './PendingAgreement';
+import RevokeAgreement from './RevokeAgreement';
 
 
 class Main extends React.Component {
@@ -14,7 +15,8 @@ class Main extends React.Component {
                 {/* <Channel /> */}
                 {/* <Explorer /> */}
                 {/* <CreateAgreement /> */}
-                <PendingAgreement />
+                {/* <PendingAgreement /> */}
+                <RevokeAgreement />
             </div>
         );
     }
