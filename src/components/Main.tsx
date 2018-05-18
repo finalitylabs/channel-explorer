@@ -1,6 +1,9 @@
 import * as React from 'react';
 import Navigation from './Navigation';
+import Channel from './Channel';
 import Explorer from './Explorer';
+import CreateAgreement from './CreateAgreement';
+import PendingAgreement from './PendingAgreement';
 
 
 class Main extends React.Component {
@@ -8,7 +11,10 @@ class Main extends React.Component {
         return (
             <div className='main-wrapper'>
                 <Navigation />
-                <Explorer />
+                {/* <Channel /> */}
+                {/* <Explorer /> */}
+                {/* <CreateAgreement /> */}
+                <PendingAgreement />
             </div>
         );
     }

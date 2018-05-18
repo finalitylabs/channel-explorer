@@ -8,13 +8,19 @@ class Profile extends React.Component {
         return (
             
             <div className='profile-container'>
+            <select>
+                <option selected={true} disabled={true}>Select Network</option>
+                <option>Rinkeby Test Network</option>
+                <option>Localhost:XXXX</option>
+            </select>
             <div className='pic-box'/>
-                <div>
+                <div className='account'>
                     <h3>Account</h3>
                     <p>0x...</p>
+                    <button>View on Etherscan</button>
                 </div>
-                <div className='balance thick'>
-                    <h3>Balance</h3>
+                <div className='state thick'>
+                    <h3>State</h3>
                     
                 </div>
                 <div className='title-value thick'>

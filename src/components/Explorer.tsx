@@ -1,15 +1,11 @@
 import * as React from 'react';
 
-import '../App.css';
-
 class Explorer extends React.Component {
     public render() {
         return (
-            <div className='explorer-container'>
-                <div className='header'>
-                    <h1>Explorer</h1>
-                </div>
-                <div className='agreements'>
+            <div className='explorer'>
+                <h1>Explorer</h1>
+                <div className='exp-title-new'>
                     <h2>Agreements</h2>
                     <button>+ New</button>
                 </div>
@@ -19,12 +15,12 @@ class Explorer extends React.Component {
                             <tr>
                                 
                                 <th>Agreement</th>
+                                <th>Counter Party</th>
                                 <th>TXHash</th>
                                 <th>Age</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th>Value</th>
+                                <th>State</th>
                                 <th>Status</th>
+                                <th>Channel Pending</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,43 +29,53 @@ class Explorer extends React.Component {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <td>Agreement 1</td>
-                                <td>0x.....</td>
-                                <td>X d X hrs</td>
+                                <a href="#"><td>Agreement 1</td></a>
                                 <td>0x...</td>
                                 <td>0x...</td>
-                                <td>XX ETH</td>
+                                <td>X days X hrs</td>
+                                <td>X ETH</td>
+                                <td>Open Pending</td>
+                                <td>(!)</td>
+                            </tr>
+                            <tr>
+                            <a href="#"><td>Agreement 2</td></a>
+                                <td>0x...</td>
+                                <td>0x...</td>
+                                <td>X days X hrs</td>
+                                <td>X ETH</td>
                                 <td>Active</td>
+                                <td>{null}</td>
                             </tr>
                             <tr>
-                                <td>Agreement 2</td>
-                                <td>0x.....</td>
-                                <td>X d X hrs</td>
+                            <a href="#"><td>Agreement 3</td></a>
                                 <td>0x...</td>
                                 <td>0x...</td>
-                                <td>XX ETH</td>
-                                <td>Pending</td>
+                                <td>X days X hrs</td>
+                                <td>X ETH</td>
+                                <td>Disputed</td>
+                                <td>{null}</td>
                             </tr>
                             <tr>
-                                <td>Agreement 3</td>
-                                <td>0x.....</td>
-                                <td>X d X hrs</td>
+                            <a href="#"><td>Agreement 4</td></a>
                                 <td>0x...</td>
                                 <td>0x...</td>
-                                <td>XX ETH</td>
+                                <td>X days X hrs</td>
+                                <td>X ETH</td>
+                                <td>To Be Disputed</td>
+                                <td>{null}</td>
+                            </tr>
+                            <tr>
+                            <a href="#"><td>Agreement 5</td></a>
+                                <td>0x...</td>
+                                <td>0x...</td>
+                                <td>X days X hrs</td>
+                                <td>X ETH</td>
                                 <td>Closed</td>
+                                <td>{null}</td>
                             </tr>
                         </tbody>
 
                     </table>
-                </div>
-                <div className='exp-pages'>
-                    <div>&lt;&lt;</div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>&gt;&gt;</div>
-
                 </div>
             </div>
         );
