@@ -276,6 +276,27 @@
   height: 100%;
 }
 
+.agreement-detail-form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  width: 60%;
+}
+
+.agreement-detail-form h1 {
+  text-align: center;
+}
+
+.agreement-detail-form form{
+  display: flex;
+  flex-direction: column;
+}
+
+.agreement-detail-form p {
+  float: right;
+  font-size: 1em;
+}
+
 .eth-comp{
   width: 100%;
   height: 100%;

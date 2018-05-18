@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import '../App.css';
+
 class AgreementDetail extends React.Component {
     public render() {
         return (
@@ -8,6 +10,31 @@ class AgreementDetail extends React.Component {
                 <div className='exp-title-new'>
                     <h2>Agreement 1 Information</h2>
                     <button>Settle</button>
+                </div>
+                <div>
+                <form className='agreement-detail-form'>
+                    <label>TXHash
+                        <p>0x...</p>
+                    </label>
+                    <label>
+                        Status
+                        <p>Active</p>
+                    </label>
+                    <label>
+                        Age
+                        <p>X d X hrs</p>
+                    </label>
+                    <label>Counter Party
+                        <p>0x...</p>
+                    </label>
+                    <label>State
+                        <p>(XX) ETH</p>
+                    </label>
+                    <label>
+                        Nonce & Position
+                        <p>0 | XX</p>
+                    </label>
+                </form>
                 </div>
                 <div className='exp-data-table'>
                     <table>
@@ -29,7 +56,7 @@ class AgreementDetail extends React.Component {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <a href="#"><td>Channel 1</td></a>
+                                <td><a href="#">Channel 1</a></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -38,7 +65,7 @@ class AgreementDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <a href="#"><td>Channel 2</td></a>
+                            <td><a href="#">Channel 2</a></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -47,7 +74,7 @@ class AgreementDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <a href="#"><td>Channel 3</td></a>
+                            <td><a href="#">Channel 3</a></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -56,7 +83,7 @@ class AgreementDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <a href="#"><td>Channel 4</td></a>
+                            <td><a href="#">Channel 4</a></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -65,7 +92,7 @@ class AgreementDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <a href="#"><td>Channel 5</td></a>
+                            <td><a href="#">Channel 5</a></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>

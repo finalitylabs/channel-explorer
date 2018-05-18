@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {NavLink} from 'react-router-dom';
+
 
 class Explorer extends React.Component {
     public render() {
@@ -29,7 +31,7 @@ class Explorer extends React.Component {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <a href="#"><td>Agreement 1</td></a>
+                                <td><NavLink to='/agreement-detail' exact={true} strict={true}>Agreement 1</NavLink></td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
