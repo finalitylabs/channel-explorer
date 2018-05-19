@@ -299,10 +299,41 @@
 }
 
 .eth-comp{
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   height: 100%;
-  background: pink;
-  font-size: 78pt;
+  margin: 40px;
+}
+
+.eth-comp select {
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.eth-select-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eth-select-button button {
+  
+  width: 40px;
+  height: 40px;
+}
+
+.eth-send-state {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eth-send-state label {
+  display: flex;
+  justify-content: space-between;
 }
 
 .hashlock-comp{
