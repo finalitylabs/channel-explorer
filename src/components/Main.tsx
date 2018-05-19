@@ -15,6 +15,7 @@ import Eth from './Eth';
 import Hashlock from './Hashlock';
 import Tokens from './Tokens';
 import Objects from './Objects';
+import ChannelDetail from './ChannelDetail';
 
 
 
@@ -30,6 +31,7 @@ class Main extends React.Component {
                         <Route path='/hashlock' exact={true} strict={true} component={Hashlock} />
                         <Route path='/tokens' exact={true} strict={true} component={Tokens} />
                         <Route path='/objects' exact={true} strict={true} component={Objects} />
+                        <Route path='/channel-detail' exact={true} strict={true} component={ChannelDetail} />
                         <Route path='/create-agreement' exact={true} component={CreateAgreement} />
                         <Route path='/pending-agreement' exact={true} component={PendingAgreement} />
                         <Route path='/recoke-agreement' exact={true} component={RevokeAgreement} />
