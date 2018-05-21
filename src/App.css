@@ -17,11 +17,18 @@
 
 .profile-container {
   display: flex;
+  flex-shrink: none;
   flex-direction: column;
   padding: 20px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
   height: 100vh;
+  min-height: 700px;
   width: 300px;
+}
+
+.profile-select {
+  height: 30px;
+  font-size: 1em;
 }
 
 .state {
@@ -37,8 +44,12 @@
   text-align: center;
 }
 
-.account button {
-  width: 100%;
+.account a {
+  text-decoration: none;
+}
+
+.account div {
+  
   margin-bottom: 10px;
   padding: 10px;
   background: steelblue;
@@ -68,7 +79,7 @@
 
 .pic-box {
   align-self: center;
-  margin: 10px;
+  margin-top: 20px;
   min-height: 100px;
   width: 100px;
   background-image: url('./assets/profile-icon.png');
@@ -108,6 +119,8 @@
   justify-content: space-between;
 }
 
+
+
 .exp-title-new button {
   width: 100px;
   background: steelblue;
@@ -116,7 +129,9 @@
   cursor: pointer;
 }
 
-
+.red button{
+  background: #f44242;
+}
 
 .exp-data-table th{
   text-align: left;
@@ -124,8 +139,14 @@
 
 .exp-data-table table{
   margin: 30px;
-  width: 100%;
+  width: 90%;
   padding: 1em;
+}
+
+.exp-data-table td{
+  padding-top: 20px;
+  width: 200px;
+
 }
 
 .channel-container h1 {
@@ -306,11 +327,17 @@
   margin: 40px;
 }
 
+.eth-comp a {
+  text-decoration: none;
+  color: white;
+}
+
 .eth-comp select {
   width: 90%;
   height: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 1em;
 }
 
 .eth-select-button {
@@ -320,20 +347,55 @@
 }
 
 .eth-select-button button {
-  
+  background: steelblue;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
   width: 40px;
   height: 40px;
 }
 
+.eth-send {
+  border-top: 3px solid black;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
 .eth-send-state {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.eth-send-state label {
+.eth-amount {
+  width: 100%;
+  padding-top: 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+
+
+.eth-amount input {
+  width: 300px;
+  height: 30px;
+  line-height: 45px;
+  font-size: 1.5em;
+}
+
+.eth-send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  margin-top: 2em;
+  width: 150px;
+  height: 50px;
+  background: steelblue;
+  cursor: pointer;
+  color: white;
+  float: right;
 }
 
 .hashlock-comp{
@@ -356,7 +418,6 @@
   background: gray;
   font-size: 78pt;
 }
-
 
 
 

@@ -8,7 +8,7 @@ class AgreementDetail extends React.Component {
         return (
             <div className='explorer'>
                 <h1>Explorer / Agreement 1</h1>
-                <div className='exp-title-new'>
+                <div className='exp-title-new red'>
                     <h2>Agreement 1 Information</h2>
                     <button>Settle</button>
                 </div>

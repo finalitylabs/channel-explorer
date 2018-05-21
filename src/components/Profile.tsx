@@ -8,7 +8,7 @@ class Profile extends React.Component {
         return (
             
             <div className='profile-container'>
-            <select>
+            <select className='profile-select'>
                 <option selected={true} disabled={true}>Select Network</option>
                 <option>Rinkeby Test Network</option>
                 <option>Localhost:XXXX</option>
@@ -17,7 +17,7 @@ class Profile extends React.Component {
                 <div className='account'>
                     <h3>Account</h3>
                     <p>0x...</p>
-                    <button>View on Etherscan</button>
+                    <a href='https://etherscan.io/' rel="noopener noreferrer" target='_blank'><div>View on Etherscan</div></a>
                 </div>
                 <div className='state thick'>
                     <h3>State</h3>

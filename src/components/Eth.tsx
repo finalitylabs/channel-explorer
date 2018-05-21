@@ -1,6 +1,9 @@
 import * as React from 'react';
 
 import '../App.css';
+import { NavLink } from 'react-router-dom';
+
+
 
 class Eth extends React.Component {
     public render() {
@@ -18,17 +21,20 @@ class Eth extends React.Component {
                     <option>2</option>
                 </select>
                 
-                    <button>+</button>
+                    <button><NavLink to='/eth-create-channel' exact={true} strict={true}>+</NavLink></button>
                 </div>
                 <div className='eth-send'>
                     <div className='eth-send-state'>
                         <h3>State</h3>
                         <p>XX ETH</p>
                     </div>
+                    <div className='eth-amount'>
                     <label>Amount:
-                        <input type='text' />
                     </label>
-                    <button>Send</button>
+                    <input type='text' />
+
+                    </div>
+                    <button className='eth-send-button'>Send</button>
                 </div>
             </div>
         );
