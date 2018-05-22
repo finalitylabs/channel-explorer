@@ -3,7 +3,6 @@ import "./App.css";
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Todos from "./models/Todos";
 import Wallet from "./models/Wallet";
 
 
@@ -11,27 +10,10 @@ import { observer } from "mobx-react";
 import Profile from "./components/Profile";
 import Main from './components/Main';
 import Navigation from './components/Navigation';
-import SettleModal from "./components/SettleModal";
+// import SettleModal from "./components/SettleModal";
 
 @observer
-class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: typeof Wallet.Wallet.Type }> {
-  private todoInput: HTMLInputElement;
-
-  public addTodo(e: React.SyntheticEvent<HTMLButtonElement>) {
-    e.preventDefault();
-    if (this.todoInput.value !== "") {
-      this.props.store.add({ text: this.todoInput.value });
-      // Notice that this is type-checked properly. For example, something like this:
-      // this.props.store.add({ tyxt: true });
-      // Will result in a compile-time error
-      this.todoInput.value = "";
-    }
-  }
-
-  public removeTodo(e: React.SyntheticEvent<HTMLButtonElement>, todo: typeof Todos.Todo.Type) {
-    e.preventDefault();
-    this.props.store.remove(todo);
-  }
+class App extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
 
   public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -39,14 +21,15 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
   }
 
   public render() {
+
     return (
       <Router>
       <div id='app-wrapper'>
         {/* <SettleModal /> */}
-        <Profile />
+        <Profile wallet={this.props.wallet} />
         <div className='main-wrapper'>
           <Navigation />
-          <Main />
+          <Main wallet={this.props.wallet} />
         </div>
         
         {/* <div>Balance {this.props.wallet.balance}</div>

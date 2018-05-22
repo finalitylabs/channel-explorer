@@ -1,8 +1,9 @@
 import { flow, types } from "mobx-state-tree";
-import Layer2lib from "js-layer2lib";
-console.log(Layer2lib);
-type L2 = Layer2lib;
-const l2: L2 = new Layer2lib("http://127.0.0.1:8545");
+import { default as Layer2lib, BrowserStorageProxy } from "js-layer2lib";
+import * as localforage from "localforage";
+
+let l2: Layer2lib | null = null;
+//let localstore: LocalForage | null = null;
 
 const Transation = types.model({
   from_id: types.string,
@@ -15,10 +16,27 @@ const Transation = types.model({
 const Wallet = types
   .model({
     balance: types.number,
-    transactions: types.array(Transation)
+    transactions: types.array(Transation),
+    connected: false
   })
   .actions(self => {
     return {
+      connect() {
+        const localstore = localforage.createInstance({
+          driver: localforage.INDEXEDDB,
+          name: "channel-explorer",
+          version: 1.0,
+          size: 4980736,
+          storeName: "Wallet",
+          description: "Stores data for layer2lib"
+        });
+        const options = {
+          db: new BrowserStorageProxy(localstore),
+          privateKey: ""
+        };
+        l2 = new Layer2lib("http://127.0.0.1:8545", options);
+        self.connected = true;
+      },
       // The typeof operator belo is the important one: this is how you interact with types introduced
       // by mobx-state-tree
       transact: flow(function* transact(todo: typeof Transation.Type) {
@@ -30,8 +48,20 @@ const Wallet = types
 
       getBalance: flow(function* getBalance() {
         // aysnc test using FLOW and a generator for an operation
-        const bal: string = yield l2.getMainnetBalance("0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f");
+        const bal: string = yield l2!.getMainnetBalance("0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f");
         self.balance = Number.parseFloat(bal);
+        console.log("bal", bal);
+      }),
+
+      createAgreement: flow(function* createAgreement(agreementParams: any) {
+        console.log("agreement", agreementParams);
+
+        const id = "";
+        // aysnc test using FLOW and a generator for an operation
+        yield l2!.createGSCAgreement(agreementParams);
+
+        const agreement: string = yield l2!.getGSCAgreement(id);
+        console.log("agreement", agreement);
       })
     };
   });

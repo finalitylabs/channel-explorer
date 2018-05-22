@@ -1,8 +1,12 @@
 import * as React from 'react';
-
-class CreateAgreement extends React.Component {
+import { observer, inject } from 'mobx-react';
+import Wallet from "../models/Wallet";
+@inject("wallet")
+@observer
+class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
     
     public render() {
+        console.log( 'props', this.props );
         return (
             <div className="create-agreement">
                 <h1>Explorer / Create Agreement</h1>

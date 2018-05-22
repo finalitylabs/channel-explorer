@@ -1,7 +1,8 @@
 import * as React from 'react';
 import '../App.css';
+import Wallet from '../models/Wallet';
 
-class Profile extends React.Component {
+class Profile extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
    
 
     public render() {
