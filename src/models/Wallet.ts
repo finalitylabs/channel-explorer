@@ -56,11 +56,17 @@ const Wallet = types
       createAgreement: flow(function* createAgreement(agreementParams: any) {
         console.log("agreement", agreementParams);
 
-        const id = "";
-        // aysnc test using FLOW and a generator for an operation
+        const id = agreementParams.ID;
         yield l2!.createGSCAgreement(agreementParams);
 
         const agreement: string = yield l2!.getGSCAgreement(id);
+        console.log("agreement fetched", agreement);
+      }),
+
+      getAgreement: flow(function* createAgreement(agreementId: string) {
+        console.log("agreementId", agreementId);
+        yield l2!.getGSCAgreement(agreementId);
+        const agreement: string = yield l2!.getGSCAgreement(agreementId);
         console.log("agreement", agreement);
       })
     };
