@@ -57,6 +57,8 @@ const Wallet = types
         console.log("createAgreement options", agreementParams);
 
         const id = agreementParams.ID;
+
+        agreementParams.dbSalt = "Alice"; // replace using salt from indexeddb
         yield l2!.createGSCAgreement(agreementParams);
 
         const agreement: string = yield l2!.getGSCAgreement(id);

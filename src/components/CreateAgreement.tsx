@@ -18,7 +18,7 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
                         Initial Type:
                         <select onChange={onChange} name="type">
                             <option selected={true} disabled={true}>Choose One</option>
-                            <option>ETH</option>
+                            <option value="Ether">Ether</option>
                             <option>Hashlock</option>
                             <option>Token</option>
                             <option>Object</option>
@@ -46,6 +46,7 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
         this.setState({
           [name]: value
         });
+        console.log('this.setState', this.state);
       }    
     private async handleSubmit(event:any) {
         event.preventDefault();
@@ -56,7 +57,8 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
             partyA: '0x3afa9e75471ef7d29d58fec49e48d17ba617bba8',
             partyB: s.partyB,
             balanceA: s.balanceA,
-            balanceB: s.balanceB
+            balanceB: s.balanceB,
+            types: [s.type],
         }
         // console.log('createAgreement options', options);
         await this.props.wallet.createAgreement(options);
