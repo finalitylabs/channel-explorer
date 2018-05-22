@@ -32,7 +32,7 @@ const Wallet = types
         });
         const options = {
           db: new BrowserStorageProxy(localstore),
-          privateKey: ""
+          privateKey: " "
         };
         l2 = new Layer2lib("http://127.0.0.1:8545", options);
         self.connected = true;
@@ -54,7 +54,7 @@ const Wallet = types
       }),
 
       createAgreement: flow(function* createAgreement(agreementParams: any) {
-        console.log("agreement", agreementParams);
+        console.log("createAgreement options", agreementParams);
 
         const id = agreementParams.ID;
         yield l2!.createGSCAgreement(agreementParams);

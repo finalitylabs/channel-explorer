@@ -39,13 +39,6 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
         );
     }
     private onChange(event:any) {
-        /*
-        ID: string;
-        partyA: string;
-        partyB: string;
-        balanceA: string;
-        balanceB: string;
-        */
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -56,7 +49,6 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
       }    
     private async handleSubmit(event:any) {
         event.preventDefault();
-        console.log(this.state);
         const s = this.state as any;
         const id = 'testid';
         const options = {
@@ -66,6 +58,7 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
             balanceA: s.balanceA,
             balanceB: s.balanceB
         }
+        // console.log('createAgreement options', options);
         await this.props.wallet.createAgreement(options);
         //const getagreement = await this.props.wallet
         //const wallet = this.props.wallet;
