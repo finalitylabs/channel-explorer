@@ -9,7 +9,7 @@ class Explorer extends React.Component {
                 <h1>Explorer</h1>
                 <div className='exp-title-new'>
                     <h2>Agreements</h2>
-                    <button><NavLink style={{color: 'white', textDecoration: 'none'}} to='create-agreement' exact={true} strict={true}>+ New</NavLink></button>
+                    <div><NavLink style={{color: 'white', textDecoration: 'none'}} to='create-agreement' exact={true} strict={true}>+ New</NavLink></div>
                 </div>
                 <div className='exp-data-table'>
                     <table>

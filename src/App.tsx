@@ -11,6 +11,7 @@ import { observer } from "mobx-react";
 import Profile from "./components/Profile";
 import Main from './components/Main';
 import Navigation from './components/Navigation';
+import SettleModal from "./components/SettleModal";
 
 @observer
 class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: typeof Wallet.Wallet.Type }> {
@@ -41,6 +42,7 @@ class App extends React.Component<{ store: typeof Todos.Todos.Type; wallet: type
     return (
       <Router>
       <div id='app-wrapper'>
+        {/* <SettleModal /> */}
         <Profile />
         <div className='main-wrapper'>
           <Navigation />

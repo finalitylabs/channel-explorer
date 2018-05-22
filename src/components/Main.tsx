@@ -21,11 +21,13 @@ import EthCreateChannel from './EthCreateChannel';
 
 
 
+
 class Main extends React.Component {
     public render() {
         return (
             
                 <div className='main-wrapper'>
+                    
                     <Switch>
                         <Route path='/' exact={true} strict={true} component={Explorer} />
                         <Route path='/eth' exact={true} strict={true} component={Eth} />
