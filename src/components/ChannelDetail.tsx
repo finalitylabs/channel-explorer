@@ -26,9 +26,6 @@ class ChannelDetail extends React.Component {
                         Age
                         <p>X d X hrs</p>
                     </label>
-                    <label>Counter Party
-                        <p>0x...</p>
-                    </label>
                     <label>State
                         <p>(XX) ETH</p>
                     </label>
@@ -58,7 +55,7 @@ class ChannelDetail extends React.Component {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <td><a href="#">Channel 1</a></td>
+                                <td>Transaction 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -67,7 +64,7 @@ class ChannelDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <td><a href="#">Channel 2</a></td>
+                            <td>Transaction 2</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -76,7 +73,7 @@ class ChannelDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <td><a href="#">Channel 3</a></td>
+                            <td>Transaction 3</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -85,7 +82,7 @@ class ChannelDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <td><a href="#">Channel 4</a></td>
+                            <td>Transaction 4</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -94,7 +91,7 @@ class ChannelDetail extends React.Component {
                                 
                             </tr>
                             <tr>
-                            <td><a href="#">Channel 5</a></td>
+                            <td>Transaction 5</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>

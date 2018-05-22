@@ -116,6 +116,7 @@
   margin: 30px;
   padding: 1em;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -123,6 +124,7 @@
 
 .exp-title-new button {
   width: 100px;
+  height: 50px;
   background: steelblue;
   color: white;
   font-size: 1em;
@@ -300,8 +302,8 @@
 .agreement-detail-form {
   display: flex;
   flex-direction: column;
-  margin: 40px;
-  width: 60%;
+  margin-left: 50px;
+  width: 70%;
 }
 
 .agreement-detail-form h1 {
@@ -311,6 +313,7 @@
 .agreement-detail-form form{
   display: flex;
   flex-direction: column;
+  
 }
 
 .agreement-detail-form p {

@@ -39,9 +39,9 @@ class Main extends React.Component {
                         <Route path='/agreement-detail' exact={true} component={AgreementDetail} />
                         <Route path='/eth-create-channel' excact={true} component={EthCreateChannel} />
                         {/* <Channel /> */}
-                        {/* <CreateAgreement /> */}
-                        {/* <PendingAgreement /> */}
                         {/* <RevokeAgreement /> */}
+                        {/* <PendingAgreement /> */}
+                        {/* <CreateAgreement /> */}
                         {/* <AgreementDetail /> */}
                     </Switch>
                 </div>

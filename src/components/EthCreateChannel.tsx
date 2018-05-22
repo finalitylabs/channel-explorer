@@ -10,16 +10,16 @@ class EthCreateChannel extends React.Component {
                 
                 <div className='eth-send'>
                     <div className='eth-amount'>
-                    <label>Your State:
+                    <label>Your Balance:
                     </label>
-                    <input type='text' />
+                    <input type='text' placeholder='(XX)'/>
 
                 
                     </div>
                     <div className='eth-amount'>
-                    <label>Counter Party State:
+                    <label>Counter Party Balance:
                     </label>
-                    <input type='text' />
+                    <input type='text' placeholder='(XX)'/>
 
                     </div>
                     <div className='eth-send-button'>Send</div>
