@@ -15,10 +15,10 @@ import Navigation from './components/Navigation';
 @observer
 class App extends React.Component<{ Store: typeof Store.Store.Type }> {
 
-  public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
+  /*public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
     this.props.Store.getBalance();
-  }
+  }*/
 
   public render() {
 
