@@ -9,7 +9,8 @@ import Wallet from "./models/Wallet";
 
 const wallet = Wallet.Wallet.create({ balance: 0, transactions: [] });
 wallet.connect();
-wallet.getBalance();
+//this.props.wallet.getAgreement("").then(x=>console.log(x)); // TODO testing
+//wallet.getBalance();
 
 ReactDOM.render(<App wallet={wallet}/>, document.getElementById("root") as HTMLElement);
 // registerServiceWorker();

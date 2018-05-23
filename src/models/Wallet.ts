@@ -19,6 +19,19 @@ const Wallet = types
     transactions: types.array(Transation),
     connected: false
   })
+  .views(self => {
+    return {
+      getAgreement: flow(function* getAgreement(agreementId: string) {
+        const dbSalt = "Alice";
+        const agreementid = "testid";
+        const entryID = agreementid + dbSalt;
+        console.log("agreementId", entryID);
+        const agreement: string = yield l2!.getGSCAgreement(entryID);
+        console.log("agreement", agreement);
+        return agreement;
+      })
+    };
+  })
   .actions(self => {
     return {
       connect() {
@@ -32,9 +45,10 @@ const Wallet = types
         });
         const options = {
           db: new BrowserStorageProxy(localstore),
-          privateKey: " "
+          privateKey: "0xf825de9c8d4116d3ca80710df6587ff6d1652452c69403183679e9158879f100"
         };
         l2 = new Layer2lib("http://127.0.0.1:8545", options);
+        l2!.initGSC({});
         self.connected = true;
       },
       // The typeof operator belo is the important one: this is how you interact with types introduced
@@ -54,21 +68,21 @@ const Wallet = types
       }),
 
       createAgreement: flow(function* createAgreement(agreementParams: any) {
-        console.log("createAgreement options", agreementParams);
+        console.log("createAgreement options", JSON.stringify(agreementParams));
 
-        const id = agreementParams.ID;
-
+        // const id = agreementParams.ID;
         agreementParams.dbSalt = "Alice"; // replace using salt from indexeddb
-        yield l2!.createGSCAgreement(agreementParams);
-
-        const agreement: string = yield l2!.getGSCAgreement(id);
-        console.log("agreement fetched", agreement);
+        yield l2!.createGSCAgreement({ ...agreementParams }); // copy object
+        // const agreement: string = yield l2!.getGSCAgreement(id);
+        // console.log("agreement fetched", agreement);
       }),
 
-      getAgreement: flow(function* createAgreement(agreementId: string) {
-        console.log("agreementId", agreementId);
-        yield l2!.getGSCAgreement(agreementId);
-        const agreement: string = yield l2!.getGSCAgreement(agreementId);
+      _getAgreement: flow(function* getAgreement(agreementId: string) {
+        const dbSalt = "Alice";
+        const agreementid = "testid";
+        const entryID = agreementid + dbSalt;
+        console.log("agreementId", entryID);
+        const agreement: string = yield l2!.getGSCAgreement(entryID);
         console.log("agreement", agreement);
       })
     };
