@@ -5,12 +5,12 @@ import "./index.css";
 
 // import registerServiceWorker from './registerServiceWorker';
 
-import Wallet from "./models/Wallet";
+import Store from "./models/Store";
 
-const wallet = Wallet.Wallet.create({ balance: 0, transactions: [] });
-wallet.connect();
-//this.props.wallet.getAgreement("").then(x=>console.log(x)); // TODO testing
-//wallet.getBalance();
+const store = Store.Store.create({ balance: 0, transactions: [] });
+store.connect();
+//this.props.Store.getAgreement("").then(x=>console.log(x)); // TODO testing
+//Store.getBalance();
 
-ReactDOM.render(<App wallet={wallet}/>, document.getElementById("root") as HTMLElement);
+ReactDOM.render(<App Store={store}/>, document.getElementById("root") as HTMLElement);
 // registerServiceWorker();

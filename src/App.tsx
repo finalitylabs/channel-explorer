@@ -3,7 +3,7 @@ import "./App.css";
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Wallet from "./models/Wallet";
+import Store from "./models/Store";
 
 
 import { observer } from "mobx-react";
@@ -13,11 +13,11 @@ import Navigation from './components/Navigation';
 // import SettleModal from "./components/SettleModal";
 
 @observer
-class App extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
+class App extends React.Component<{ Store: typeof Store.Store.Type }> {
 
   public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
-    this.props.wallet.getBalance();
+    this.props.Store.getBalance();
   }
 
   public render() {
@@ -26,13 +26,13 @@ class App extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
       <Router>
       <div id='app-wrapper'>
         {/* <SettleModal /> */}
-        <Profile wallet={this.props.wallet} />
+        <Profile Store={this.props.Store} />
         <div className='main-wrapper'>
           <Navigation />
-          <Main wallet={this.props.wallet} />
+          <Main Store={this.props.Store} />
         </div>
         
-        {/* <div>Balance {this.props.wallet.balance}</div>
+        {/* <div>Balance {this.props.Store.balance}</div>
         <form>
           <button type="submit" onClick={this.getBalance.bind(this)}>
             Get Balance

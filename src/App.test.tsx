@@ -2,13 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import App from "./App";
 
-import Wallet from "./models/Wallet";
+import Store from "./models/Store";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
 
-  const wallet = Wallet.Wallet.create({ balance: 0, transactions: [] });
+  const store = Store.Store.create({ balance: 0, transactions: [] });
 
-  ReactDOM.render(<App wallet={wallet} />, div);
+  ReactDOM.render(<App Store={store} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

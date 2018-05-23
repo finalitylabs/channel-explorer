@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
-import Wallet from "../models/Wallet";
-@inject("wallet")
+import Store from "../models/Store";
+@inject("Store")
 @observer
-class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
+class CreateAgreement extends React.Component<{ Store: typeof Store.Store.Type }> {
     public render() {
         console.log( 'props', this.props );
         const onChange = this.onChange.bind(this);
@@ -51,7 +51,7 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
     private async handleSubmit(event:any) {
         event.preventDefault();
         const s = this.state as any;
-        const id = 'testid';
+        const id = 'testid2';
         const options = {
             ID: id,
             partyA: '0x3afa9e75471ef7d29d58fec49e48d17ba617bba8',
@@ -61,9 +61,9 @@ class CreateAgreement extends React.Component<{ wallet: typeof Wallet.Wallet.Typ
             types: [s.type],
         }
         // console.log('createAgreement options', options);
-        await this.props.wallet.createAgreement(options);
-        //const getagreement = await this.props.wallet
-        //const wallet = this.props.wallet;
+        await this.props.Store.createAgreement(options);
+        //const getagreement = await this.props.Store
+        //const Store = this.props.Store;
         
         alert('agreement was submitted');
         

@@ -18,18 +18,18 @@ import Objects from './Objects';
 import ChannelDetail from './ChannelDetail';
 import EthCreateChannel from './EthCreateChannel';
 
-import Wallet from "../models/Wallet";
+import Store from "../models/Store";
 // import * as SRouter from 'mst-react-router';
 
 // const { RouterModel, syncHistoryWithStore } = SRouter
 import { Provider, observer } from 'mobx-react';
 
 @observer
-class Main extends React.Component<{ wallet: typeof Wallet.Wallet.Type }> {
+class Main extends React.Component<{ Store: typeof Store.Store.Type }> {
     public render() {
         return (
                 <div className='main-wrapper'>
-                    <Provider wallet={this.props.wallet}>
+                    <Provider Store={this.props.Store}>
                         <Switch>
                             <Route path='/' exact={true} strict={true} component={Explorer} />
                             <Route path='/eth' exact={true} strict={true} component={Eth} />
