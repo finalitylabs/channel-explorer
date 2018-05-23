@@ -45,7 +45,7 @@ const Wallet = types
         });
         const options = {
           db: new BrowserStorageProxy(localstore),
-          privateKey: "0xf825de9c8d4116d3ca80710df6587ff6d1652452c69403183679e9158879f100"
+          privateKey: "KEY"
         };
         l2 = new Layer2lib("http://127.0.0.1:8545", options);
         l2!.initGSC({});
