@@ -4,10 +4,22 @@ import '../App.css';
 import { NavLink } from 'react-router-dom';
 import { default as l2 } from "../services/Layer2Service";
 
+function stateName(obj:any):string {
+    if(obj.closed === true) return "Closed";
+    if(obj.inDispute) return "In Dispute";
+    if(obj.__active) return "active";
+    return "Open Pending";
+}
+
 class AgreementDetail extends React.Component<any, any> {
     public render() {
-        if(!this.state.agreement) return (<div className='explorer'/>);
+        if(!this.state || !this.state.agreement) return (<div className='explorer'/>);
         console.log('agreement', this.state.agreement)
+
+        const a:any = this.state.agreement;
+        const cstate:string = stateName(a);
+
+        // const channels = a.channels;
 
         return (
             <div className='explorer'>
@@ -19,21 +31,21 @@ class AgreementDetail extends React.Component<any, any> {
                 <div>
                 <form className='agreement-detail-form'>
                     <label>TXHash
-                        <p>0x...</p>
+                        <p>{a.address}</p>
                     </label>
                     <label>
                         Status
-                        <p>Active</p>
+                        <p>{cstate}</p>
                     </label>
                     <label>
                         Age
                         <p>X d X hrs</p>
                     </label>
                     <label>Counter Party
-                        <p>0x...</p>
+                        <p>{a.partyB}</p>
                     </label>
                     <label>State
-                        <p>(XX) ETH</p>
+                        <p>({ l2.web3().fromWei(a.balanceB, 'ether') }) {a.types[0]}</p>
                     </label>
                     <label>
                         Nonce & Position

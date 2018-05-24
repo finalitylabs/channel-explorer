@@ -41,6 +41,10 @@ class Layer2Service {
     this.connected = true;
   }
 
+  public web3() {
+    return l2!.web3;
+  }
+
   public async getAgreements(): Promise<any> {
     return l2!.gsc.getAllAgreements();
   }

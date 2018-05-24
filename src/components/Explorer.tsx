@@ -22,8 +22,8 @@ class Explorer extends React.Component<any, any> {
         const agreementList = ids.map((id, index) => (
             <tr>
                 <td><NavLink to={"/agreement-detail?id="+id} exact={true} strict={true}>Agreement {index+1}</NavLink></td>
-                <td>0x{ms[id].partyB}</td>
-                <td>0x{ms[id].address}</td>
+                <td>{ms[id].partyB}</td>
+                <td>{ms[id].address}</td>
                 <td>X days X hrs</td>
                 <td>X {ms[id].types[0]}</td>
                 <td>{this.stateName(ms[id])}</td>
