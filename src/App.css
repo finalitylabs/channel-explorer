@@ -1,3 +1,11 @@
+* select {
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
 #app-wrapper {
   display: flex;
   width: 100vw;
@@ -7,8 +15,9 @@
 .main-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  min-width: 700px;
 }
 
 .App {
@@ -88,23 +97,39 @@
 }
 
 .nav-container {
+  position: fixed;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
+  width: 100%;
   min-width: 700px;
   box-shadow:10px 5px 15px 5px rgba(0,0,0,0.2);
+  background: #aaa;
+
+
+}
+
+.nav-container ul {
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+  
+}
+
+.nav-container li{
+  list-style-type: none;
   cursor: pointer;
 }
 
-.nav-container h2 {
-  flex: 1;
-  padding: 1em;
-}
-
 .explorer {
-  margin-top: 1em;
+  margin-top: 10em;
   min-width: 800px;
 }
 
@@ -135,28 +160,41 @@
 }
 
 .red button{
+  padding: 1em;
+  color: white;
+  font-size: 1.1em;
   background: #f44242;
 }
 
-.exp-data-table th{
-  text-align: left;
+.exp-data-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+
 }
 
-.exp-data-table table{
-  margin: 30px;
+.exp-data-table table {
   width: 90%;
-  padding: 1em;
+  min-width: 90%;
+  table-layout: auto;
+  
 }
 
-.exp-data-table td{
-  padding-top: 20px;
-  width: 200px;
+.exp-data-table td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.channel-container {
+  margin-top: 2em;
 
 }
 
 .channel-container h1 {
   text-decoration: underline;
-  padding: 1em;
+  padding: 2em;
 }
 
 .agreements {
@@ -179,6 +217,7 @@
 }
 
 .channel-data-table table{
+
   text-align: left;
   table-layout: auto;
   width: 100%;

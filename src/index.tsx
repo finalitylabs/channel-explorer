@@ -8,7 +8,7 @@ import { default as l2 } from "./services/Layer2Service";
 
 import Store from "./models/Store";
 
-const privkey = '0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87'
+const privkey = '0x00ef97c6678ffcbb17d2d8a019abc374a830945008f9472ad05319d594208ffd'
 
 async function start():Promise<void> {
     const store = Store.Store.create({ balance: 0, transactions: [] });

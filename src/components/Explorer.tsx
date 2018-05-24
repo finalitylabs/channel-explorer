@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NavLink} from 'react-router-dom';
+
 import { default as l2 } from "../services/Layer2Service";
 
 class Explorer extends React.Component<any, any> {
@@ -21,7 +21,7 @@ class Explorer extends React.Component<any, any> {
         console.log('agreements', this.state.agreementIds)
         const agreementList = ids.map((id, index) => (
             <tr>
-                <td><NavLink to={"/agreement-detail?id="+id} exact={true} strict={true}>Agreement {index+1}</NavLink></td>
+                <td>Agreement {index+1}</td>
                 <td>{ms[id].partyB}</td>
                 <td>{ms[id].address}</td>
                 <td>X days X hrs</td>
@@ -36,7 +36,7 @@ class Explorer extends React.Component<any, any> {
                 <h1>Explorer</h1>
                 <div className='exp-title-new'>
                     <h2>Agreements</h2>
-                    <div><NavLink style={{color: 'white', textDecoration: 'none'}} to='create-agreement' exact={true} strict={true}>+ New</NavLink></div>
+                    <div>+ New</div>
                 </div>
                 <div className='exp-data-table'>
                     <table>
@@ -52,17 +52,7 @@ class Explorer extends React.Component<any, any> {
                                 <th>Channel Pending</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {/*props.data.agreement.map(row => (
-                                <tr>
-                                <td><NavLink to='/agreement-detail' exact={true} strict={true}>{this.props.agreement}</NavLink></td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>Open Pending</td>
-                                <td>(!)</td>
-                            </tr>))*/}
+                        <tbody className='exp-tbody'>
                             {agreementList}
                         </tbody>
 

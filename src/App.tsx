@@ -1,15 +1,12 @@
 import * as React from "react";
 import "./App.css";
 
-import { BrowserRouter as Router } from 'react-router-dom';
-
 import Store from "./models/Store";
 
 
 import { observer } from "mobx-react";
 import Profile from "./components/Profile";
 import Main from './components/Main';
-import Navigation from './components/Navigation';
 // import SettleModal from "./components/SettleModal";
 
 @observer
@@ -19,16 +16,15 @@ class App extends React.Component<{ Store: typeof Store.Store.Type }> {
     e.preventDefault();
     this.props.Store.getBalance();
   }*/
+  
 
   public render() {
 
     return (
-      <Router>
       <div id='app-wrapper'>
         {/* <SettleModal /> */}
         <Profile Store={this.props.Store} />
         <div className='main-wrapper'>
-          <Navigation />
           <Main Store={this.props.Store} />
         </div>
         
@@ -63,7 +59,6 @@ class App extends React.Component<{ Store: typeof Store.Store.Type }> {
           })}
         </ul> */}
       </div>
-      </Router>
     );
   }
 }

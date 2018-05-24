@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import '../App.css';
-import { NavLink } from 'react-router-dom';
+
 import { default as l2 } from "../services/Layer2Service";
 
 function stateName(obj:any):string {
@@ -73,7 +73,7 @@ class AgreementDetail extends React.Component<any, any> {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <td><NavLink to='/channel-detail' exact={true} strict={true}>Channel 1</NavLink></td>
+                                <td>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -82,7 +82,7 @@ class AgreementDetail extends React.Component<any, any> {
                                 
                             </tr>
                             <tr>
-                                <td><NavLink to='/channel-detail' exact={true} strict={true}>Channel 1</NavLink></td>
+                                <td>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -91,7 +91,7 @@ class AgreementDetail extends React.Component<any, any> {
                                 
                             </tr>
                             <tr>
-                                <td><NavLink to='/channel-detail' exact={true} strict={true}>Channel 1</NavLink></td>
+                                <td>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -100,7 +100,7 @@ class AgreementDetail extends React.Component<any, any> {
                                 
                             </tr>
                             <tr>
-                                <td><NavLink to='/channel-detail' exact={true} strict={true}>Channel 1</NavLink></td>
+                                <td>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>
@@ -109,7 +109,7 @@ class AgreementDetail extends React.Component<any, any> {
                                 
                             </tr>
                             <tr>
-                                <td><NavLink to='/channel-detail' exact={true} strict={true}>Channel 1</NavLink></td>
+                                <td>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>

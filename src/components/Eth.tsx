@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import '../App.css';
-import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -24,7 +24,7 @@ class Eth extends React.Component {
                     <option>2</option>
                 </select>
                 
-                    <button><NavLink to='/eth-create-channel' exact={true} strict={true}>+</NavLink></button>
+                    <button>+</button>
                 </div>
                 <div className='eth-send'>
                     <div className='eth-send-state'>

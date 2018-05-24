@@ -68,14 +68,7 @@ class Channel extends React.Component {
 
                     </table>
                 </div>
-                <div className='channel-pages'>
-                    <div>&lt;&lt;</div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>&gt;&gt;</div>
-
-                </div>
+                
             </div>
         );
     }
