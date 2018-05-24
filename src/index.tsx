@@ -14,8 +14,8 @@ async function start():Promise<void> {
     const store = Store.Store.create({ balance: 0, transactions: [] });
     await l2.connect(privkey, 'Alice')
     // For testing connection only
-    const bal = await l2.getBalance();
-    console.log('test balance read', bal)
+    //const bal = await l2.getAgreement() //.getAgreementDetails() // l2.getBalance();
+    //console.log('test balance read', bal)
 
     ReactDOM.render(<App Store={store}/>, document.getElementById("root") as HTMLElement);
     // registerServiceWorker();
