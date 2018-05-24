@@ -41,6 +41,10 @@ class Layer2Service {
     this.connected = true;
   }
 
+  public async getAgreements(): Promise<any> {
+    return l2!.gsc.getAllAgreements();
+  }
+
   public async getBalance(mainnetAccount?: string): Promise<number> {
     // TODO remove, for testing
     mainnetAccount = mainnetAccount || "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f";

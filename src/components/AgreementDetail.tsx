@@ -2,9 +2,13 @@ import * as React from 'react';
 
 import '../App.css';
 import { NavLink } from 'react-router-dom';
+import { default as l2 } from "../services/Layer2Service";
 
-class AgreementDetail extends React.Component {
+class AgreementDetail extends React.Component<any, any> {
     public render() {
+        if(!this.state.agreement) return (<div className='explorer'/>);
+        console.log('agreement', this.state.agreement)
+
         return (
             <div className='explorer'>
                 <h1>Explorer / Agreement 1</h1>
@@ -107,6 +111,11 @@ class AgreementDetail extends React.Component {
                 </div>
             </div>
         );
+    }
+    public async componentDidMount() {
+        const agreements = await l2.getAgreements();
+        const agreementId = Object.keys(agreements)[0];
+        this.setState({agreement: agreements[agreementId]});
     }
 }
 

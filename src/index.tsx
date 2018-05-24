@@ -13,9 +13,12 @@ const privkey = '0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0f
 async function start():Promise<void> {
     const store = Store.Store.create({ balance: 0, transactions: [] });
     await l2.connect(privkey, 'Alice')
+    
     // For testing connection only
-    //const bal = await l2.getAgreement() //.getAgreementDetails() // l2.getBalance();
-    //console.log('test balance read', bal)
+    //const bal = await l2.getAgreementDetails() // l2.getBalance();
+    //console.log('test balance reads', bal)
+    // console.log('agreements', await l2.getAgreements());
+
 
     ReactDOM.render(<App Store={store}/>, document.getElementById("root") as HTMLElement);
     // registerServiceWorker();
