@@ -87,8 +87,10 @@ class Layer2Service {
     agreementParams.dbSalt = this.dbSalt;
     // TODO do not hardcode Wei
     // replace using salt from indexeddb
-    agreementParams.balanceA = l2!.web3.toWei(0.0001, "ether");
-    agreementParams.balanceB = l2!.web3.toWei(0.0001, "ether");
+    const a = parseInt(agreementParams.balanceA, 10);
+    const b = parseInt(agreementParams.balanceB, 10);
+    agreementParams.balanceA = l2!.web3.toWei(a, "ether");
+    agreementParams.balanceB = l2!.web3.toWei(b, "ether");
     console.log("createAgreement options", JSON.stringify(agreementParams));
     // balanceA
 

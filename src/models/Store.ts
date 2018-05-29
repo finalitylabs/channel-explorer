@@ -16,6 +16,7 @@ const Transation = types.model({
 let prevPage: string = "";
 let prevSubpage: string = "";
 
+// test eth netid "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f"
 const Store = types
   .model({
     balance: types.number,
@@ -23,7 +24,7 @@ const Store = types
     connected: false,
     page: "ExplorerMain",
     subpage: "Explorer",
-    netkey: "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f",
+    netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
     prvkey: "0x00ef97c6678ffcbb17d2d8a019abc374a830945008f9472ad05319d594208ffd"
   })
   .views(self => {

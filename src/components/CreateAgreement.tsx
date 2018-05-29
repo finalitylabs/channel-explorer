@@ -29,11 +29,11 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
           </label>
           <label>
             Counter Party State:
-            <input type="text" placeholder="(XX)" name="balanceB" onChange={onChange} />
+            <input type="text" placeholder="(0.0001)" name="balanceB" onChange={onChange} />
           </label>
           <label>
             Your State:
-            <input type="text" placeholder="(XX)" name="balanceA" onChange={onChange} />
+            <input type="text" placeholder="(0.0001)" name="balanceA" onChange={onChange} />
           </label>
           <div className="submit">
             <button type="submit">Submit</button>
@@ -56,14 +56,23 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
     event.preventDefault();
     const s = this.state as any;
     const id = "testid2";
+    //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
     const options = {
       ID: id,
-      partyA: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
+      partyA: this.props.store.netkey,
       partyB: s.partyB,
       balanceA: s.balanceA,
       balanceB: s.balanceB,
       types: [s.type]
     };
+    if(parseInt(options.balanceA,10) > 0.1) {
+      alert('value too large for balance A')
+      return;
+    }
+    if(parseInt(options.balanceB,10) > 0.1) {
+      alert('value too large for balance B')
+      return;
+    }
     // console.log('createAgreement options', options);
     await this.props.store.createAgreement(options);
     //const getagreement = await this.props.store

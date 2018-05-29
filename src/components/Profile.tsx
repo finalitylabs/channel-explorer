@@ -55,7 +55,7 @@ class Profile extends React.Component<{ store: typeof Store.Store.Type }, any> {
     );
   }
       public async componentDidMount() {
-        const balance = await l2.getBalance();
+        const balance = await l2.getBalance(this.props.store.netkey);
         this.setState({balance});
     }
 }
