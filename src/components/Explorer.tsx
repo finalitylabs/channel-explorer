@@ -23,7 +23,7 @@ class Explorer extends React.Component<any, any> {
             <tr key={id}>
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('AgreementDetail')}>Agreement {index+1}</td>
+                    onClick={() => this.props.store.setPage('AgreementDetail')}><a href="#">Agreement {index+1}</a></td>
                 <td>{ms[id].partyB}</td>
                 <td>{ms[id].address}</td>
                 <td>X days X hrs</td>
