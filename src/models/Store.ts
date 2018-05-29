@@ -22,13 +22,20 @@ const Store = types
     transactions: types.array(Transation),
     connected: false,
     page: "ExplorerMain",
-    subpage: "Explorer"
+    subpage: "Explorer",
+    netkey: "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f",
+    prvkey: "0x00ef97c6678ffcbb17d2d8a019abc374a830945008f9472ad05319d594208ffd"
   })
   .views(self => {
     return {};
   })
   .actions(self => {
     return {
+      updateKeys(netkey: string, prvkey: string): void {
+        self.netkey = netkey;
+        self.prvkey = prvkey;
+        l2.connect(self.prvkey);
+      },
       setPage(page: string, subpage: string): void {
         console.log("changing page to ", page, ":", subpage);
         console.log("page from ", prevPage, ":", prevSubpage);

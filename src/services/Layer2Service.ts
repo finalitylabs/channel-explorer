@@ -20,7 +20,10 @@ class Layer2Service {
     this.connected = false;
   }
   public connect(privateKey: string, dbSalt?: string): void {
-    if (l2 !== null) return; // already connected
+    if (l2 !== null) {
+      // return; // already connected
+      // TODO close previous layer2 connection
+    }
     this.dbSalt = dbSalt || this.dbSalt;
 
     const localstore = localforage.createInstance({
