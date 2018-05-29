@@ -73,7 +73,9 @@ class AgreementDetail extends React.Component<any, any> {
                                 <td></td>
                                 </tr>))*/}
                             <tr>
-                                <td>Channel 1</td>
+                                <td 
+                                    style={{cursor: 'pointer'}}
+                                    onClick={() => this.props.store.setPage('ExplorerMain', 'ChannelDetail')}>Channel 1</td>
                                 <td>0x...</td>
                                 <td>0x...</td>
                                 <td>X days X hrs</td>

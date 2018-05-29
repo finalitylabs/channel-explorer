@@ -2,7 +2,10 @@ import * as React from 'react';
 
 import '../App.css';
 
-class Channel extends React.Component {
+import { observer } from 'mobx-react';
+
+@observer
+class Channel extends React.Component<any, any> {
     public render() {
         return (
             <div className='channel-container'>
@@ -23,7 +26,7 @@ class Channel extends React.Component {
                         <thead>
                             <tr>
                                 
-                                <th>Channel</th>
+                                <th onClick={() => this.props.store.setPage('Explorer','ChannelDetail')}>Channel</th>
                                 <th>TXHash</th>
                                 <th>Age</th>
                                 <th>From</th>

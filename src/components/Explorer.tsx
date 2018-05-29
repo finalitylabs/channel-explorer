@@ -21,7 +21,9 @@ class Explorer extends React.Component<any, any> {
         console.log('agreements', this.state.agreementIds)
         const agreementList = ids.map((id, index) => (
             <tr>
-                <td>Agreement {index+1}</td>
+                <td 
+                    style={{ cursor: 'pointer'}}
+                    onClick={() => this.props.store.setPage('AgreementDetail')}>Agreement {index+1}</td>
                 <td>{ms[id].partyB}</td>
                 <td>{ms[id].address}</td>
                 <td>X days X hrs</td>
@@ -31,12 +33,14 @@ class Explorer extends React.Component<any, any> {
             </tr>)
         );
 
+        
+
         return (
             <div className='explorer'>
                 <h1>Explorer</h1>
                 <div className='exp-title-new'>
                     <h2>Agreements</h2>
-                    <div>+ New</div>
+                    <div onClick={() => this.props.store.setPage('CreateAgreement')}>+ New</div>
                 </div>
                 <div className='exp-data-table'>
                     <table>

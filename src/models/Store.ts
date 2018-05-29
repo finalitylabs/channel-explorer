@@ -22,7 +22,7 @@ const Store = types
     transactions: types.array(Transation),
     connected: false,
     page: "ExplorerMain",
-    subpage: ""
+    subpage: "Explorer"
   })
   .views(self => {
     return {};
