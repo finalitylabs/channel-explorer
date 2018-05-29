@@ -17,6 +17,7 @@ class ChannelDetail extends React.Component<any, any>{
                     </span>/ Channel 1</h1>
                 <div className='exp-title-new red'>
                     <h2>Channel 1 Information</h2>
+                    <button>+ Transaction</button>
                     <button>Settle</button>
                 </div>
                 <div>

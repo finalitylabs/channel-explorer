@@ -35,6 +35,24 @@
   width: 300px;
 }
 
+.address-form {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.address-form input {
+  width: 100%;
+}
+
+.keys {
+  margin: 0;
+  padding: 0;
+  background: pink;
+}
+
 .profile-select {
   height: 30px;
   font-size: 1em;

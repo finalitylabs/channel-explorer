@@ -2,11 +2,22 @@ import * as React from "react";
 import "../App.css";
 import Store from "../models/Store";
 import { default as l2 } from "../services/Layer2Service";
+
+import { observer } from 'mobx-react';
+
+@observer
 class Profile extends React.Component<{ store: typeof Store.Store.Type }, any> {
   public render() {
     if(!this.state) return (<div className="profile-container"/>)
     return (
       <div className="profile-container">
+        <div className='keys'>
+          <form className='address-form'>
+            <input type='text' placeholder='Your address'/>
+            <input type='text' placeholder='Private Key' />
+            <button type='submit'>Submit</button>
+          </form>
+        </div>
         <select className="profile-select">
           <option value='selected' disabled={true}>
             Select Network
