@@ -40,7 +40,7 @@ class Explorer extends React.Component<any, any> {
                 <h1>Explorer</h1>
                 <div className='exp-title-new'>
                     <h2>Agreements</h2>
-                    <div onClick={() => this.props.store.setPage('CreateAgreement')}>+ New</div>
+                    <div onClick={() => this.props.store.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
                 </div>
                 <div className='exp-data-table'>
                     <table>
