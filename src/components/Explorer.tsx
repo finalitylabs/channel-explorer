@@ -20,7 +20,7 @@ class Explorer extends React.Component<any, any> {
 
         console.log('agreements', this.state.agreementIds)
         const agreementList = ids.map((id, index) => (
-            <tr>
+            <tr key={id}>
                 <td 
                     style={{ cursor: 'pointer'}}
                     onClick={() => this.props.store.setPage('AgreementDetail')}>Agreement {index+1}</td>
