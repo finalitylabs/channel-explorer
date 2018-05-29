@@ -13,7 +13,7 @@ import Store from "../models/Store";
 // import * as SRouter from 'mst-react-router';
 
 // const { RouterModel, syncHistoryWithStore } = SRouter
-import { Provider, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import Navigation from './Navigation';
 import ExplorerMain from '../containers/ExplorerMain';
 import EthMain from '../containers/EthMain';
@@ -27,7 +27,7 @@ class Main extends React.Component<{ Store: typeof Store.Store.Type }> {
                     
                     <Navigation />
             
-                    <Provider Store={this.props.Store}>
+                    
                         <div>
                             <ExplorerMain />
                             <EthMain />
@@ -36,7 +36,7 @@ class Main extends React.Component<{ Store: typeof Store.Store.Type }> {
                             <Objects />
                             
                         </div>
-                    </Provider>
+                    
                 </div>
            
         );

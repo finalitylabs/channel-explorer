@@ -4,7 +4,7 @@ import "./App.css";
 import Store from "./models/Store";
 
 
-import { observer } from "mobx-react";
+import { Provider, observer } from "mobx-react";
 import Profile from "./components/Profile";
 import Main from './components/Main';
 // import SettleModal from "./components/SettleModal";
@@ -21,44 +21,16 @@ class App extends React.Component<{ Store: typeof Store.Store.Type }> {
   public render() {
 
     return (
-      <div id='app-wrapper'>
-        {/* <SettleModal /> */}
-        <Profile Store={this.props.Store} />
-        <div className='main-wrapper'>
-          <Main Store={this.props.Store} />
+      <Provider Store={this.props.Store}>
+        <div id='app-wrapper'>
+          {/* <SettleModal /> */}
+          <Profile Store={this.props.Store} />
+          <div className='main-wrapper'>
+            <Main Store={this.props.Store} />
+          </div>
+          
         </div>
-        
-        {/* <div>Balance {this.props.Store.balance}</div>
-        <form>
-          <button type="submit" onClick={this.getBalance.bind(this)}>
-            Get Balance
-          </button>
-        </form>
-        <br />
-        <form>
-          <input
-            ref={r => {
-              if (r) this.todoInput = r;
-            }}
-            type="text"
-            placeholder="Add entry"
-          />
-          <button type="submit" onClick={this.addTodo.bind(this)}>
-            Add todo
-          </button>
-        </form>
-
-        <ul>
-          {this.props.store.todos.map((item, i) => {
-            return (
-              <li key={i}>
-                {item.text} &nbsp; &nbsp;
-                <button onClick={e => this.removeTodo(e, item)}>Remove</button>
-              </li>
-            );
-          })}
-        </ul> */}
-      </div>
+      </Provider>
     );
   }
 }
@@ -71,13 +43,13 @@ class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h1 className="App-title">Welcome to React</h1>
+      </header>
+      <p className="App-intro">
+      To get started, edit <code>src/App.tsx</code> and save to reload.
+      </p>
       </div>
       
     );
@@ -85,3 +57,34 @@ class App extends React.Component {
 }
 */
 export default App;
+
+{/* <div>Balance {this.props.Store.balance}</div>
+<form>
+  <button type="submit" onClick={this.getBalance.bind(this)}>
+    Get Balance
+  </button>
+</form>
+<br />
+<form>
+  <input
+    ref={r => {
+      if (r) this.todoInput = r;
+    }}
+    type="text"
+    placeholder="Add entry"
+  />
+  <button type="submit" onClick={this.addTodo.bind(this)}>
+    Add todo
+  </button>
+</form>
+
+<ul>
+  {this.props.store.todos.map((item, i) => {
+    return (
+      <li key={i}>
+        {item.text} &nbsp; &nbsp;
+        <button onClick={e => this.removeTodo(e, item)}>Remove</button>
+      </li>
+    );
+  })}
+</ul> */}

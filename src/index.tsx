@@ -20,7 +20,10 @@ async function start():Promise<void> {
     // console.log('agreements', await l2.getAgreements());
 
 
-    ReactDOM.render(<App Store={store}/>, document.getElementById("root") as HTMLElement);
+    ReactDOM.render(
+        
+        <App Store={store}/>
+        , document.getElementById("root") as HTMLElement);
     // registerServiceWorker();
     return;
 }
