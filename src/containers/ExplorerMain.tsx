@@ -10,7 +10,12 @@ import ChannelDetail from '../components/ChannelDetail';
 import { observer } from 'mobx-react';
 import Store from '../models/Store'
 
-const children = {Explorer, CreateAgreement, RevokeAgreement, AgreementDetail, Channel, ChannelDetail};
+const children = {Explorer, 
+                  CreateAgreement, 
+                  RevokeAgreement, 
+                  AgreementDetail, 
+                  Channel, 
+                  ChannelDetail};
 
 @observer
 class ExplorerMain extends React.Component<any, any> {

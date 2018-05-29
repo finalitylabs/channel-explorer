@@ -23,7 +23,9 @@ class AgreementDetail extends React.Component<any, any> {
 
         return (
             <div className='explorer'>
-                <h1>Explorer / Agreement 1</h1>
+                <h1><span
+                        style={{cursor: 'pointer'}}
+                        onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement 1</h1>
                 <div className='exp-title-new red'>
                     <h2>Agreement 1 Information</h2>
                     <button>Settle</button>

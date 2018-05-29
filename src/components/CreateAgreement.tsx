@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
 import Store from "../models/Store";
-@inject("Store")
+@inject("store")
 @observer
 class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }> {
   public render() {

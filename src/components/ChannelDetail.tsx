@@ -4,11 +4,17 @@ import * as React from 'react';
 
 import '../App.css';
 
-class ChannelDetail extends React.Component {
+class ChannelDetail extends React.Component<any, any>{
     public render() {
         return (
             <div className='explorer'>
-                <h1>Explorer / Agreement 1 / Channel 1</h1>
+                <h1>
+                    <span style={{cursor: 'pointer'}}
+                          onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer 
+                    </span>/ 
+                    <span style={{cursor: 'pointer'}}
+                          onClick={() => this.props.store.setPage('ExplorerMain', 'AgreementDetail')}> Agreement 1 
+                    </span>/ Channel 1</h1>
                 <div className='exp-title-new red'>
                     <h2>Channel 1 Information</h2>
                     <button>Settle</button>
