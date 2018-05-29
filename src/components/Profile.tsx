@@ -1,9 +1,10 @@
 import * as React from "react";
 import "../App.css";
 import Store from "../models/Store";
-
-class Profile extends React.Component<{ store: typeof Store.Store.Type }> {
+import { default as l2 } from "../services/Layer2Service";
+class Profile extends React.Component<{ store: typeof Store.Store.Type }, any> {
   public render() {
+    if(!this.state) return (<div className="profile-container"/>)
     return (
       <div className="profile-container">
         <select className="profile-select">
@@ -26,7 +27,7 @@ class Profile extends React.Component<{ store: typeof Store.Store.Type }> {
         </div>
         <div className="title-value thick">
           <h3>ETH</h3>
-          <p>XX</p>
+          <p>{this.state.balance || 0}</p>
         </div>
 
         <div className="dotted">
@@ -53,6 +54,10 @@ class Profile extends React.Component<{ store: typeof Store.Store.Type }> {
       </div>
     );
   }
+      public async componentDidMount() {
+        const balance = await l2.getBalance();
+        this.setState({balance});
+    }
 }
 
 export default Profile;
