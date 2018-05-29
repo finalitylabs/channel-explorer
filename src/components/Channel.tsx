@@ -11,7 +11,7 @@ class Channel extends React.Component<any, any> {
             <div className='channel-container'>
                 <div className='header'>
                     <select>
-                        <option selected={true} disabled={true}>Existing Agreements</option>
+                        <option value='selected' disabled={true}>Existing Agreements</option>
                         <option>Agreement 1</option>
                         <option>Agreement 2</option>
                         <option>Agreement 3</option>

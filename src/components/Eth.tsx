@@ -12,14 +12,14 @@ class Eth extends React.Component {
             <div className='eth-comp'>
                 <h2>Agreements</h2>
                 <select>
-                    <option selected={true} disabled={true}>Agreement</option>
+                    <option value='selected' disabled={true}>Agreement</option>
                     <option>1</option>
                     <option>2</option>
                 </select>
                 <h2>Channels</h2>
                 <div className='eth-select-button'>
                 <select>
-                    <option selected={true} disabled={true}>Channel</option>
+                    <option value='selected' disabled={true}>Channel</option>
                     <option>1</option>
                     <option>2</option>
                 </select>

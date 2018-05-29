@@ -7,7 +7,7 @@ class Profile extends React.Component<{ store: typeof Store.Store.Type }> {
     return (
       <div className="profile-container">
         <select className="profile-select">
-          <option selected={true} disabled={true}>
+          <option value='selected' disabled={true}>
             Select Network
           </option>
           <option>Rinkeby Test Network</option>

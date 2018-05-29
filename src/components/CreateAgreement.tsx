@@ -18,7 +18,7 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
           <label>
             Initial Type:
             <select onChange={onChange} name="type">
-              <option selected={true} disabled={true}>
+              <option value='selected' disabled={true}>
                 Choose One
               </option>
               <option value="Ether">Ether</option>
