@@ -12,17 +12,31 @@ const Transation = types.model({
   to_type: types.string
 });
 
+// TODO: move into state?
+let prevPage: string = "";
+let prevSubpage: string = "";
+
 const Store = types
   .model({
     balance: types.number,
     transactions: types.array(Transation),
-    connected: false
+    connected: false,
+    page: "ExplorerMain",
+    subpage: ""
   })
   .views(self => {
     return {};
   })
   .actions(self => {
     return {
+      setPage(page: string, subpage: string): void {
+        console.log("changing page to ", page, ":", subpage);
+        console.log("page from ", prevPage, ":", prevSubpage);
+        prevPage = self.page;
+        prevSubpage = self.subpage;
+        self.page = page;
+        self.subpage = subpage;
+      },
       // The typeof operator belo is the important one: this is how you interact with types introduced
       // by mobx-state-tree
       _transact: flow(function* transact(todo: typeof Transation.Type) {

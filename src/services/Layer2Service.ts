@@ -14,7 +14,7 @@ const debugAgreementId = "testid2";
 export type Agreement = Agreement;
 class Layer2Service {
   public connected: boolean = false;
-  public localstore: LocalForage;
+  public localStore: LocalForage;
   private dbSalt: string = "Alice";
   constructor() {
     this.connected = false;
@@ -35,7 +35,7 @@ class Layer2Service {
       db: new BrowserStorageProxy(localstore),
       privateKey
     };
-    this.localstore = localstore;
+    this.localStore = localstore;
     l2 = new Layer2lib("http://127.0.0.1:8545", options);
     l2!.initGSC({});
     this.connected = true;

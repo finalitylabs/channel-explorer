@@ -9,6 +9,6 @@ it("renders without crashing", () => {
 
   const store = Store.Store.create({ balance: 0, transactions: [] });
 
-  ReactDOM.render(<App Store={store} />, div);
+  ReactDOM.render(<App store={store} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

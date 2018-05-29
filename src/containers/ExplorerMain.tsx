@@ -8,7 +8,7 @@ import RevokeAgreement from '../components/RevokeAgreement';
 import ChannelDetail from '../components/ChannelDetail';
 
 class ExplorerMain extends React.Component<any, any> {
-
+    
 
     public render() {
         return (

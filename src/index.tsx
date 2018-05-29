@@ -22,7 +22,7 @@ async function start():Promise<void> {
 
     ReactDOM.render(
         
-        <App Store={store}/>
+        <App store={store}/>
         , document.getElementById("root") as HTMLElement);
     // registerServiceWorker();
     return;

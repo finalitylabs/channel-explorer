@@ -3,32 +3,27 @@ import "./App.css";
 
 import Store from "./models/Store";
 
-
 import { Provider, observer } from "mobx-react";
 import Profile from "./components/Profile";
-import Main from './components/Main';
+import Main from "./components/Main";
 // import SettleModal from "./components/SettleModal";
 
 @observer
-class App extends React.Component<{ Store: typeof Store.Store.Type }> {
-
+class App extends React.Component<{ store: typeof Store.Store.Type }> {
   /*public getBalance(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
-    this.props.Store.getBalance();
+    this.props.store.getBalance();
   }*/
-  
 
   public render() {
-
     return (
-      <Provider Store={this.props.Store}>
-        <div id='app-wrapper'>
+      <Provider store={this.props.store}>
+        <div id="app-wrapper">
           {/* <SettleModal /> */}
-          <Profile Store={this.props.Store} />
-          <div className='main-wrapper'>
-            <Main Store={this.props.Store} />
+          <Profile store={this.props.store} />
+          <div className="main-wrapper">
+            <Main store={this.props.store} />
           </div>
-          
         </div>
       </Provider>
     );
@@ -58,7 +53,8 @@ class App extends React.Component {
 */
 export default App;
 
-{/* <div>Balance {this.props.Store.balance}</div>
+{
+  /* <div>Balance {this.props.store.balance}</div>
 <form>
   <button type="submit" onClick={this.getBalance.bind(this)}>
     Get Balance
@@ -87,4 +83,5 @@ export default App;
       </li>
     );
   })}
-</ul> */}
+</ul> */
+}
