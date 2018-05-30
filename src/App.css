@@ -18,11 +18,11 @@
   flex-direction: row;
   height: 100%;
   width: 100%;
-  min-width: 700px;
+  min-width: 500px;
 }
 
 .main-inner {
-  width: 80%;
+  width: 70%;
 }
 
 .App {
@@ -127,9 +127,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 70px;
   width: 100%;
-  min-width: 700px;
+  min-width: 600px;
   color: white;
   background: #333;
 
@@ -156,7 +156,7 @@
 
 .explorer {
   margin-top: 10em;
-  min-width: 600px;
+  min-width: 500px;
 }
 
 .explorer h1{
@@ -211,8 +211,8 @@
 
 .exp-data-table table {
   
-  width: 90%;
-  min-width: 50%;
+  width: 100%;
+  min-width: 500px;
   table-layout: auto;
   
 }
