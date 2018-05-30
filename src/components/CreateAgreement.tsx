@@ -3,10 +3,16 @@ import { observer, inject } from "mobx-react";
 import Store from "../models/Store";
 @inject("store")
 @observer
-class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }> {
+class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }, any> {
+  constructor(props:any) {
+    super(props);
+    this.state = {balanceA:"0.0002", balanceB: "0.0002"};
+  }
   public render() {
-    console.log("props", this.props);
+    // console.log("props", this.props);
     const onChange = this.onChange.bind(this);
+    const valA = this.state.balanceA;
+    const valB = this.state.balanceB;
     return (
       <div className="create-agreement">
         <h1>Explorer / Create Agreement</h1>
@@ -29,11 +35,11 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
           </label>
           <label>
             Counter Party State:
-            <input type="text" placeholder="(0.0001)" name="balanceB" value="0.0001" onChange={onChange} />
+            <input type="text" placeholder="(0.0002)" name="balanceB" onChange={onChange} value={valB} />
           </label>
           <label>
             Your State:
-            <input type="text" placeholder="(0.0001)" name="balanceA" value="0.0001" onChange={onChange} />
+            <input type="text" placeholder="(0.0002)" name="balanceA" onChange={onChange} value={valA} />
           </label>
           <div className="submit">
             <button type="submit">Submit</button>
@@ -50,7 +56,7 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
     this.setState({
       [name]: value
     });
-    console.log("this.setState", this.state);
+    console.log("this.setState", ( {...this.state, [name]: value} ));
   }
   private async handleSubmit(event: any) {
     event.preventDefault();
@@ -82,11 +88,11 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
       alert('value can not be 0 for balance B')
       return;
     }
-    if(parseFloat(options.balanceA) > 0.1) {
+    if(parseFloat(options.balanceA) >= 0.001) {
       alert('value too large for balance A')
       return;
     }
-    if(parseFloat(options.balanceB) > 0.1) {
+    if(parseFloat(options.balanceB) >= 0.001) {
       alert('value too large for balance B')
       return;
     }
