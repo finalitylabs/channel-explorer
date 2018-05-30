@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import '../App.css';
 
-import { default as l2 } from "../services/Layer2Service";
+import { default as l2, Channel } from "../services/Layer2Service";
 
 function stateName(obj:any):string {
     if(obj.closed === true) return "Closed";
@@ -11,13 +11,33 @@ function stateName(obj:any):string {
     return "Open Pending";
 }
 
-class AgreementDetail extends React.Component<any, any> {
+class AgreementDetail extends React.Component<any, {agreement:any, channels:Channel[]}> {
+    constructor(props:any) {
+        super(props)
+        this.state = {};
+    }
     public render() {
         if(!this.state || !this.state.agreement) return (<div className='explorer'/>);
         console.log('agreement', this.state.agreement)
 
         const a:any = this.state.agreement;
         const cstate:string = stateName(a);
+
+        /*
+        const channels = this.state.channels.map((ch) => (
+            <tr key={ch.ID}>
+                <td 
+                    style={{ cursor: 'pointer'}}
+                    onClick={() => this.props.store.setPage('AgreementDetail')}><a href="#">Agreement {index+1}</a></td>
+                <td>{ms[id].partyB}</td>
+                <td>{ms[id].address}</td>
+                <td>X days X hrs</td>
+                <td>X {ms[id].types[0]}</td>
+                <td>{this.stateName(ms[id])}</td>
+                <td>(!)</td>
+            </tr>)
+        );
+        */
 
         // const channels = a.channels;
 
@@ -132,7 +152,9 @@ class AgreementDetail extends React.Component<any, any> {
     public async componentDidMount() {
         const agreements = await l2.getAgreements();
         const agreementId = Object.keys(agreements)[0];
-        this.setState({agreement: agreements[agreementId]});
+
+        const channels:Channel[] = await l2.getAllChannels(agreementId);
+        this.setState({agreement: agreements[agreementId], channels});
     }
 }
 

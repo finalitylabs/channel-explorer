@@ -11,7 +11,7 @@ export interface AgreementDetails {
 let l2: Layer2lib | null = null;
 const debugAgreementId = "testid2";
 
-interface Channel {
+export interface Channel {
   ID: string;
   agreementID: string;
   type: string;
