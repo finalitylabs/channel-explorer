@@ -64,8 +64,9 @@ class Layer2Service {
   }
 
   public async getAllChannels(agreementID?: string): Promise<Channel[]> {
-    const allChannels: any = await l2!.gsc.getAllChannels();
-    if (!agreementID) return allChannels;
+    let allChannels: any = await l2!.gsc.getAllChannels();
+    allChannels = allChannels || {};
+    if (!agreementID) return Object.values(allChannels);
     const v: Channel[] = Object.values(allChannels);
     return v.filter(chan => chan.agreementID === agreementID);
   }
