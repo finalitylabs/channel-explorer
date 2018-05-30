@@ -59,7 +59,7 @@ class Layer2Service {
     return l2!.web3;
   }
 
-  public async getAgreements(): Promise<any> {
+  public async getAgreements(): Promise<{ [id: string]: Agreement[] }> {
     return l2!.gsc.getAllAgreements();
   }
 
