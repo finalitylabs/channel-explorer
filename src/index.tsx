@@ -19,7 +19,6 @@ async function start():Promise<void> {
 
 
     ReactDOM.render(
-        
         <App store={store}/>
         , document.getElementById("root") as HTMLElement);
     // registerServiceWorker();

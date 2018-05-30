@@ -52,6 +52,11 @@ class Layer2Service {
     return l2!.gsc.getAllAgreements();
   }
 
+  public async getAllChannels(): Promise<any> {
+    const allChannels = await l2!.gsc.getAllChannels();
+    return allChannels;
+  }
+
   public async getBalance(mainnetAccount?: string): Promise<number> {
     // TODO remove, for testing
     mainnetAccount = mainnetAccount || "0x7ea92dBce5387f8fF480Fe5D557aBd4C7B09054f";
