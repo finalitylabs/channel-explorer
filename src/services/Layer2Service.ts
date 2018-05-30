@@ -11,6 +11,17 @@ export interface AgreementDetails {
 let l2: Layer2lib | null = null;
 const debugAgreementId = "testid2";
 
+interface Channel {
+  ID: string;
+  agreementID: string;
+  type: string;
+  balanceA: string;
+  balanceB: string;
+  partyA: string;
+  partyB: string;
+  dbSalt?: string;
+}
+
 export type Agreement = Agreement;
 class Layer2Service {
   public connected: boolean = false;
@@ -52,9 +63,47 @@ class Layer2Service {
     return l2!.gsc.getAllAgreements();
   }
 
-  public async getAllChannels(): Promise<any> {
-    const allChannels = await l2!.gsc.getAllChannels();
-    return allChannels;
+  public async getAllChannels(agreementID?: string): Promise<Channel[]> {
+    const allChannels: any = await l2!.gsc.getAllChannels();
+    if (!agreementID) return allChannels;
+    const v: Channel[] = Object.values(allChannels);
+    return v.filter(chan => chan.agreementID === agreementID);
+  }
+
+  public async getChannel(channelID: string): Promise<Channel> {
+    const c: Channel = await l2!.gsc.getChannel(channelID);
+    return c;
+  }
+
+  public async createChannel(channelParams: Channel): Promise<Channel> {
+    /*
+    let channelAlice = {
+      dbSalt: 'Alice', // for testing multiple layer2 instances on same db
+      ID: 'respek',
+      agreementID: 'spankHub1337',
+      type: 'ether',
+      balanceA: web3.toWei(0.03, 'ether'),
+      balanceB: web3.toWei(0.05, 'ether')
+    }
+    */
+    //await lAlice.openGSCChannel(channelAlice)
+
+    // const id = agreementParams.ID;
+    // TODO do not hardcode Wei
+    // replace using salt from indexeddb
+    channelParams.dbSalt = this.dbSalt;
+    const a = parseFloat(channelParams.balanceA);
+    const b = parseFloat(channelParams.balanceB);
+    channelParams.balanceA = l2!.web3.toWei(a, "ether");
+    channelParams.balanceB = l2!.web3.toWei(b, "ether");
+    console.log("createChannel options", JSON.stringify(channelParams));
+    // balanceA
+
+    // TODO: use openGSCChannel with types
+    await l2!.gsc.openChannel({ ...channelParams });
+    const chan = this.getChannel(channelParams.ID);
+    console.log("channel saved and fetched", chan);
+    return chan;
   }
 
   public async getBalance(mainnetAccount?: string): Promise<number> {
