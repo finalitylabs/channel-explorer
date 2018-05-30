@@ -201,7 +201,7 @@
   padding: 1em;
   color: white;
   font-size: 1.1em;
-  background: rgb(50, 171, 247);
+  background: steelblue;
   
 }
 
@@ -417,7 +417,7 @@
 }
 
 .eth-comp select {
-  width: 90%;
+  width: 10%;
   height: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -435,8 +435,8 @@
   color: white;
   font-size: 1em;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .eth-send {
