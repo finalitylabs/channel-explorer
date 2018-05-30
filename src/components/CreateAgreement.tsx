@@ -22,9 +22,9 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
                 Choose One
               </option>
               <option value="Ether">Ether</option>
-              <option>Hashlock</option>
-              <option>Token</option>
-              <option>Object</option>
+              <option value="Hashlock">Hashlock</option>
+              <option value="Token">Token</option>
+              <option value="Object">Object</option>
             </select>
           </label>
           <label>
