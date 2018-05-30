@@ -14,7 +14,7 @@ function stateName(obj:any):string {
 class AgreementDetail extends React.Component<any, {agreement:any, channels:Channel[]}> {
     constructor(props:any) {
         super(props)
-        this.state = {};
+        this.state = {agreement:null, channels:[] };
     }
     public render() {
         if(!this.state || !this.state.agreement) return (<div className='explorer'/>);
