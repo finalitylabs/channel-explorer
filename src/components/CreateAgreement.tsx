@@ -29,11 +29,11 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
           </label>
           <label>
             Counter Party State:
-            <input type="text" placeholder="(0.0001)" name="balanceB" onChange={onChange} />
+            <input type="text" placeholder="(0.0001)" name="balanceB" value="0.0001" onChange={onChange} />
           </label>
           <label>
             Your State:
-            <input type="text" placeholder="(0.0001)" name="balanceA" onChange={onChange} />
+            <input type="text" placeholder="(0.0001)" name="balanceA" value="0.0001" onChange={onChange} />
           </label>
           <div className="submit">
             <button type="submit">Submit</button>
@@ -73,19 +73,19 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
       balanceB: s.balanceB,
       types: [s.type]
     };
-    if(parseInt(options.balanceA,10) === 0) {
+    if(parseFloat(options.balanceA) === 0) {
       alert('value can not be 0 for balance A')
       return;
     }
-    if(parseInt(options.balanceB,10) === 0) {
+    if(parseFloat(options.balanceB) === 0) {
       alert('value can not be 0 for balance B')
       return;
     }
-    if(parseInt(options.balanceA,10) > 0.1) {
+    if(parseFloat(options.balanceA) > 0.1) {
       alert('value too large for balance A')
       return;
     }
-    if(parseInt(options.balanceB,10) > 0.1) {
+    if(parseFloat(options.balanceB) > 0.1) {
       alert('value too large for balance B')
       return;
     }
