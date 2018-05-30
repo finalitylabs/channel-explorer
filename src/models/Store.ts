@@ -25,7 +25,7 @@ const Store = types
     page: "ExplorerMain",
     subpage: "Explorer",
     netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
-    prvkey: "0x00ef97c6678ffcbb17d2d8a019abc374a830945008f9472ad05319d594208ffd"
+    prvkey: "0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87"
   })
   .views(self => {
     return {};
@@ -45,14 +45,17 @@ const Store = types
         self.page = page;
         self.subpage = subpage;
       },
+
       // The typeof operator belo is the important one: this is how you interact with types introduced
       // by mobx-state-tree
+      /*
       _transact: flow(function* transact(todo: typeof Transation.Type) {
         // aysnc test using FLOW and a generator for an operation
         const r = yield fetch("https://api.github.com");
         const b = yield r.json();
         self.balance = (b.current_user_url + "").charCodeAt(0);
       }),
+      */
 
       createAgreement: flow(function* createAgreement(agreementParams: Agreement) {
         return l2.createAgreement(agreementParams);
