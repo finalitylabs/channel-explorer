@@ -60,6 +60,7 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
   }
   private async handleSubmit(event: any) {
     event.preventDefault();
+    alert('Submission Pending...');
     const s = this.state as any;
     const id = "testid2";
 
