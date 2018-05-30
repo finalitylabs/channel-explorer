@@ -24,6 +24,7 @@
     "node_modules_ignore/**/*/index.d.ts",
     "src/globals.d.ts",
     "src/**/*.ts",
+    "src/**/*.tsx",
     "migrations/**/*.ts",
     "test/**/*.ts",
     "types/**/*.d.ts"
