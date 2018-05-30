@@ -28,7 +28,7 @@ class Profile extends React.Component<{ store: typeof Store.Store.Type }, any> {
         <div className="pic-box" />
         <div className="account">
           <h3>Account</h3>
-          <p>0x...</p>
+          <p>{this.props.store.netkey}</p>
           <a href="https://etherscan.io/" rel="noopener noreferrer" target="_blank">
             <div>View on Etherscan</div>
           </a>
