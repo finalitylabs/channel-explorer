@@ -9,6 +9,7 @@ class EthCreateChannel extends React.Component {
             <div className='eth-comp'>
                 
                 <div className='eth-send'>
+                    <h1>Create ETH Channel</h1>
                     <div className='eth-amount'>
                     <label>Your Balance:
                     </label>
