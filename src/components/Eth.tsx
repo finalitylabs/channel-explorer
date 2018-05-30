@@ -5,7 +5,7 @@ import '../App.css';
 
 
 
-class Eth extends React.Component {
+class Eth extends React.Component<any, any> {
     
     public render() {
         return (
@@ -24,7 +24,7 @@ class Eth extends React.Component {
                     <option>2</option>
                 </select>
                 
-                    <button>+</button>
+                    <button onClick={()=>this.props.store.setPage('EthMain', 'EthCreateChannel')}>+</button>
                 </div>
                 <div className='eth-send'>
                     <div className='eth-send-state'>

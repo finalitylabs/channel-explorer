@@ -28,6 +28,7 @@ class AgreementDetail extends React.Component<any, any> {
                         onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement 1</h1>
                 <div className='exp-title-new red'>
                     <h2>Agreement 1 Information</h2>
+                    <button onClick={()=>this.props.store.setPage('EthMain', 'EthCreateChannel')}>+ Channel</button>
                     <button>Settle</button>
                 </div>
                 <div>

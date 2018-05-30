@@ -16,6 +16,7 @@ import PendingAgreement from './PendingAgreement';
 import AgreementDetail from './AgreementDetail';
 import CreateAgreement from './CreateAgreement';
 import ChannelDetail from './ChannelDetail';
+import EthCreateChannel from './EthCreateChannel';
 
 
 
@@ -27,7 +28,8 @@ const children = { ExplorerMain,
                    PendingAgreement, 
                    AgreementDetail, 
                    CreateAgreement, 
-                   ChannelDetail };
+                   ChannelDetail,
+                   EthCreateChannel };
 
 @observer
 class Main extends React.Component<{ store: typeof Store.Store.Type }> {
@@ -44,7 +46,7 @@ class Main extends React.Component<{ store: typeof Store.Store.Type }> {
         <div className='nav-container'>
                 <ul>
                     <li><h2 onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('EthMain', '')}>ETH</h2></li>
+                    <li><h2 onClick={() => this.props.store.setPage('EthMain', 'Eth')}>ETH</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('Hashlock', '')}>Hashlock</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('Tokens', '')}>Tokens</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('Objects', '')}>Objects</h2></li>
