@@ -47,10 +47,10 @@ class AgreementDetail extends React.Component<any, {agreement:any, channels:Chan
                 <h1><span
                         style={{cursor: 'pointer'}}
                         onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement 1</h1>
-                <div className='exp-title-new red'>
+                <div className='exp-title-new'>
                     <h2>Agreement 1 Information</h2>
-                    <button onClick={()=>this.props.store.setPage('EthMain', 'EthCreateChannel')}>+ Channel</button>
-                    <button>Settle</button>
+                    <button className='blue' onClick={()=>this.props.store.setPage('EthMain', 'EthCreateChannel')}>+ Channel</button>
+                    <button className='red'>Settle</button>
                 </div>
                 <div>
                 <form className='agreement-detail-form'>

@@ -17,6 +17,7 @@ import AgreementDetail from './AgreementDetail';
 import CreateAgreement from './CreateAgreement';
 import ChannelDetail from './ChannelDetail';
 import EthCreateChannel from './EthCreateChannel';
+import Profile from "./Profile";
 
 
 
@@ -43,16 +44,8 @@ class Main extends React.Component<{ store: typeof Store.Store.Type }> {
 
     return (
       <div className="main-wrapper">
-        <div className='nav-container'>
-                <ul>
-                    <li><h2 onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('EthMain', 'Eth')}>ETH</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Hashlock', '')}>Hashlock</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Tokens', '')}>Tokens</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Objects', '')}>Objects</h2></li>
-                </ul>
-            </div>
-        <div>{React.createElement(child, { store: this.props.store })}</div>
+        <Profile store={this.props.store} />
+        <div className='main-inner'>{React.createElement(child, { store: this.props.store })}</div>
       </div>
     );
   }

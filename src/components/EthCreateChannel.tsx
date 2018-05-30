@@ -4,7 +4,21 @@ import '../App.css';
 
 
 class EthCreateChannel extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+    }
+
     public render() {
+        if(!this.state || !this.state.agreements.channels) return (<div className='explorer'/>);
+        if(this.state.agreementIds.length === 0) return (<div className='explorer'>
+            <h1>no channels</h1>
+        </div>);
+
+        const onChange = this.onChange.bind(this);
+        const handleSubmit = this.handleSubmit.bind(this);
+        const ids:[string]= this.state.agreementIds as [string];
+        const ms:any = this.state.agreements;
+        console.log(ms[ids[0]]);
         return (
             <div className='eth-comp'>
                 
@@ -13,17 +27,17 @@ class EthCreateChannel extends React.Component<any, any> {
                     <div className='eth-amount'>
                     <label>Your Balance:
                     </label>
-                    <input type='text' placeholder='(XX)'/>
+                    <input type='text' placeholder='(XX)' onChange={onChange}/>
 
                 
                     </div>
                     <div className='eth-amount'>
                     <label>Counter Party Balance:
                     </label>
-                    <input type='text' placeholder='(XX)'/>
+                    <input type='text' placeholder='(XX)' onChange={onChange}/>
 
                     </div>
-                    <div className='eth-send-button' onClick={this.handleSubmit}>Send</div>
+                    <div className='eth-send-button' onClick={handleSubmit}>Send</div>
                 </div>
             </div>
         );

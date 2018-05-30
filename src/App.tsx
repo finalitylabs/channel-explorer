@@ -4,7 +4,7 @@ import "./App.css";
 import Store from "./models/Store";
 
 import { Provider, observer } from "mobx-react";
-import Profile from "./components/Profile";
+
 import Main from "./components/Main";
 // import SettleModal from "./components/SettleModal";
 
@@ -20,7 +20,16 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
       <Provider store={this.props.store}>
         <div id="app-wrapper">
           {/* <SettleModal /> */}
-          <Profile store={this.props.store} />
+          <div className='nav-container'>
+                <ul>
+                    <li><h2 onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</h2></li>
+                    <li><h2 onClick={() => this.props.store.setPage('EthMain', 'Eth')}>ETH</h2></li>
+                    <li><h2 onClick={() => this.props.store.setPage('Hashlock', '')}>Hashlock</h2></li>
+                    <li><h2 onClick={() => this.props.store.setPage('Tokens', '')}>Tokens</h2></li>
+                    <li><h2 onClick={() => this.props.store.setPage('Objects', '')}>Objects</h2></li>
+                </ul>
+            </div>
+          
           <div className="main-wrapper">
             <Main store={this.props.store} />
           </div>

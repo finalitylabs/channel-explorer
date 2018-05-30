@@ -13,11 +13,16 @@
 }
 
 .main-wrapper {
+  margin-top: 35px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   min-width: 700px;
+}
+
+.main-inner {
+  width: 80%;
 }
 
 .App {
@@ -25,6 +30,7 @@
 }
 
 .profile-container {
+
   display: flex;
   flex-shrink: none;
   flex-direction: column;
@@ -121,11 +127,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 50px;
   width: 100%;
   min-width: 700px;
-  box-shadow:10px 5px 15px 5px rgba(0,0,0,0.2);
-  background: #aaa;
+  color: white;
+  background: #333;
 
 
 }
@@ -150,7 +156,7 @@
 
 .explorer {
   margin-top: 10em;
-  min-width: 800px;
+  min-width: 600px;
 }
 
 .explorer h1{
@@ -179,25 +185,34 @@
   cursor: pointer;
 }
 
-.red button{
+.red {
   padding: 1em;
   color: white;
   font-size: 1.1em;
   background: #f44242;
 }
 
+.blue {
+
+    padding: 1em;
+    color: white;
+    font-size: 1.1em;
+    background: rgb(50, 171, 247);
+  
+}
+
 .exp-data-table {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   
-
 }
 
 .exp-data-table table {
+  
   width: 90%;
-  min-width: 90%;
+  min-width: 50%;
   table-layout: auto;
   
 }
