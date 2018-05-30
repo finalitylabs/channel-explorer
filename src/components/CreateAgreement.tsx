@@ -59,6 +59,10 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
 
     if(!s.balanceA) s.balanceA = "0.0001";
     if(!s.balanceB) s.balanceB = "0.0001";
+    if(!s.partyB) {
+      alert('need value for partyB');
+      return;
+    }
 
     //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
     const options = {
