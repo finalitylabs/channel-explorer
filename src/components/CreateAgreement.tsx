@@ -56,6 +56,10 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
     event.preventDefault();
     const s = this.state as any;
     const id = "testid2";
+
+    if(!s.balanceA) s.balanceA = "0.0001";
+    if(!s.balanceB) s.balanceB = "0.0001";
+
     //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
     const options = {
       ID: id,
@@ -65,6 +69,14 @@ class CreateAgreement extends React.Component<{ store: typeof Store.Store.Type }
       balanceB: s.balanceB,
       types: [s.type]
     };
+    if(parseInt(options.balanceA,10) === 0) {
+      alert('value can not be 0 for balance A')
+      return;
+    }
+    if(parseInt(options.balanceB,10) === 0) {
+      alert('value can not be 0 for balance B')
+      return;
+    }
     if(parseInt(options.balanceA,10) > 0.1) {
       alert('value too large for balance A')
       return;
