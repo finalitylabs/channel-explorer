@@ -83,7 +83,7 @@ class Layer2Service {
       ID: 'respek',
       agreementID: 'spankHub1337',
       type: 'ether',
-      balanceA: web3.toWei(0.03, 'ether'),
+      balanceA: web3.toWei(0.03, 'ether'), 
       balanceB: web3.toWei(0.05, 'ether')
     }
     */

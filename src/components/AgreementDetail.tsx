@@ -23,21 +23,22 @@ class AgreementDetail extends React.Component<any, {agreement:any, channels:Chan
         const a:any = this.state.agreement;
         const cstate:string = stateName(a);
 
-        /*
-        const channels = this.state.channels.map((ch) => (
+        
+        const channels = this.state.channels.map((ch, index) => (
             <tr key={ch.ID}>
+            {console.log(ch.ID)}
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('AgreementDetail')}><a href="#">Agreement {index+1}</a></td>
-                <td>{ms[id].partyB}</td>
-                <td>{ms[id].address}</td>
-                <td>X days X hrs</td>
-                <td>X {ms[id].types[0]}</td>
-                <td>{this.stateName(ms[id])}</td>
+                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail')}><a href="#">Channel {index+1}</a></td>
+                <td>{ch[index].ID}</td>
+                <td>{ch[index].agreementID}</td>
+                <td>{ch[index].balanceA}</td>
+                <td>X {ch[index].type[0]}</td>
+                <td>{ch[index].balanceA}</td>
                 <td>(!)</td>
             </tr>)
         );
-        */
+        
 
         // const channels = a.channels;
 
@@ -91,11 +92,8 @@ class AgreementDetail extends React.Component<any, {agreement:any, channels:Chan
                             </tr>
                         </thead>
                         <tbody>
-                            {/*props.data.map(row => (
-                                <tr>
-                                <td></td>
-                                </tr>))*/}
-                            <tr>
+                            {channels}
+                            {/* <tr>
                                 <td 
                                     style={{cursor: 'pointer'}}
                                     onClick={() => this.props.store.setPage('ExplorerMain', 'ChannelDetail')}>Channel 1</td>
@@ -141,7 +139,7 @@ class AgreementDetail extends React.Component<any, {agreement:any, channels:Chan
                                 <td>X ETH</td>
                                 <td>Closed</td>
                                 
-                            </tr>
+                            </tr> */}
                         </tbody>
 
                     </table>
