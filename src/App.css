@@ -403,7 +403,8 @@
  
 }
 
-.eth-comp{
+.channel-comp{
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -411,36 +412,52 @@
   margin: 40px;
 }
 
-.eth-comp a {
-  text-decoration: none;
-  color: white;
+.channel-comp h1 {
+  margin-bottom: 50px;
 }
 
-.eth-comp select {
-  width: 10%;
+.channel-comp select {
+  width: 200px;
   height: 30px;
+  font-size: 1em;
+  float: right;
+}
+
+.channel-address-1 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.channel-address-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.channel-comp input {
+  width: 400px;
+  float: right;
   font-size: 1em;
 }
 
-.eth-select-button {
+.channel-select-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.eth-select-button button {
+.channel-select-button {
   background: steelblue;
   color: white;
   font-size: 1em;
   cursor: pointer;
   width: 60px;
   height: 60px;
+  float: right;
 }
 
-.eth-send {
-  border-top: 3px solid black;
+.channel-send {
+  display: flex;
+  flex-direction: column;
   margin-top: 30px;
   padding-top: 30px;
 }
@@ -455,11 +472,10 @@
   width: 100%;
   padding-top: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-
-
 
 .eth-amount input {
   width: 300px;
@@ -468,8 +484,9 @@
   font-size: 1.5em;
 }
 
-.eth-send-button {
+.channel-send-button {
   display: flex;
+  align-self: flex-end;
   align-items: center;
   justify-content: center;
   margin: 1em;
@@ -479,7 +496,6 @@
   background: steelblue;
   cursor: pointer;
   color: white;
-  float: right;
 }
 
 .hashlock-comp{

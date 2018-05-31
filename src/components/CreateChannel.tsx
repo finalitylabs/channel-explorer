@@ -12,10 +12,10 @@ class CreateChannel extends React.Component<any, any> {
     const valA = this.state.balanceA;
     const valB = this.state.balanceB;
     return (
-      <div className="eth-comp">
-        <div className="eth-send">
-          <h1>Create ETH Channel</h1>
-          <div className="eth-amount">
+      <div className="channel-comp">
+        <div className="channel-send">
+          <h1>Create Channel</h1>
+          
             <label>
               Initial Type:
               <select onChange={onChange} name="type">
@@ -28,21 +28,24 @@ class CreateChannel extends React.Component<any, any> {
                 <option value="Object">Object</option>
               </select>
             </label>
-
-            <label>Your Balance:</label>
-            <input type="text" placeholder="(0.0002)" name="balanceA" onChange={onChange} value={valA}  />
-          </div>
-          <div className="eth-amount">
+            
+          <div className="channel-address-1">
             <label>
               Counter Party Address:
               <input type="text" placeholder="(0x...)" name="partyB" onChange={onChange} />
             </label>
+          </div>
+            <div className='channel-bal'>
+            <label>Your Balance:</label>
+            <input type="text" placeholder="(0.0002)" name="balanceA" onChange={onChange} value={valA}  />
+          </div>
+          <div className='channel-address-2'>
             <label>
               Counter Party Balance:
               <input type="text" placeholder="(0.0002)" name="balanceB" onChange={onChange} value={valB} />
             </label>
           </div>
-          <div className="eth-send-button" onClick={this.handleSubmit.bind(this)}>
+          <div className="channel-send-button" onClick={this.handleSubmit.bind(this)}>
             Send
           </div>
         </div>
