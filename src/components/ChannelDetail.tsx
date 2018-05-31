@@ -21,6 +21,19 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
         const channel = this.state.channel;
         if(!channel) return (<div className='explorer'/>);
         console.log('channel detail state', this.state);
+
+        const transactionRows = this.state.transactions.map((trans, index) => (
+            <tr key={trans.ID}>
+                {console.log("====", trans, trans.ID)}
+                <td>{trans.ID}</td>
+                <td>{trans.partyB}</td>
+                <td>0x...</td>
+                <td>X days X hrs</td>
+                <td>X ETH</td>
+                <td>Open Pending</td>
+            </tr>)
+        );
+
         return (
             <div className='explorer'>
                 <h1>
@@ -62,13 +75,12 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
                         <thead>
                             <tr>
                                 
-                                <th>Channels</th>
+                                <th>Transactions</th>
                                 <th>Counter Party</th>
                                 <th>TXHash</th>
                                 <th>Age</th>
                                 <th>State</th>
                                 <th>Status</th>
-                                
                             </tr>
                         </thead>
                         <tbody>
@@ -76,51 +88,7 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
                                 <tr>
                                 <td></td>
                                 </tr>))*/}
-                            <tr>
-                                <td>Transaction 1</td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>Open Pending</td>
-                                
-                            </tr>
-                            <tr>
-                            <td>Transaction 2</td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>Active</td>
-                                
-                            </tr>
-                            <tr>
-                            <td>Transaction 3</td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>Disputed</td>
-                                
-                            </tr>
-                            <tr>
-                            <td>Transaction 4</td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>To Be Disputed</td>
-                                
-                            </tr>
-                            <tr>
-                            <td>Transaction 5</td>
-                                <td>0x...</td>
-                                <td>0x...</td>
-                                <td>X days X hrs</td>
-                                <td>X ETH</td>
-                                <td>Closed</td>
-                                
-                            </tr>
+                            {transactionRows}
                         </tbody>
 
                     </table>

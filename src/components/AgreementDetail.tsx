@@ -35,7 +35,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
             {console.log("====", ch, ch.ID)}
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', agreementID, ch.ID)}><a href="#">Channel {ch.ID}</a></td>
+                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', agreementID, ch.ID)}><a href="#">{ch.ID}</a></td>
                 <td>{ch.partyB}</td>
                 <td>N/A</td>
                 <td>N/A</td>
