@@ -11,18 +11,18 @@ import Store from "../models/Store";
 // const { RouterModel, syncHistoryWithStore } = SRouter
 import { observer } from "mobx-react";
 import ExplorerMain from "../containers/ExplorerMain";
-import EthMain from "../containers/EthMain";
+import ChannelMain from "../containers/ChannelMain";
 import PendingAgreement from './PendingAgreement';
 import AgreementDetail from './AgreementDetail';
 import CreateAgreement from './CreateAgreement';
 import ChannelDetail from './ChannelDetail';
-import EthCreateChannel from './EthCreateChannel';
+import CreateChannel from './CreateChannel';
 import Profile from "./Profile";
 
 
 
 const children = { ExplorerMain, 
-                   EthMain, 
+                   ChannelMain, 
                    Hashlock, 
                    Tokens,
                    Objects, 
@@ -30,7 +30,7 @@ const children = { ExplorerMain,
                    AgreementDetail, 
                    CreateAgreement, 
                    ChannelDetail,
-                   EthCreateChannel };
+                   CreateChannel };
 
 @observer
 class Main extends React.Component<{ store: typeof Store.Store.Type }> {
