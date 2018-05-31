@@ -30,10 +30,10 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
                     <span style={{cursor: 'pointer'}}
                           onClick={() => this.props.store.setPage('ExplorerMain', 'AgreementDetail')}> Agreement {agreementID} 
                     </span>/ Channel {channelID}</h1>
-                <div className='exp-title-new red'>
+                <div className='exp-title-new'>
                     <h2>Channel 1 Information</h2>
-                    <button>+ Transaction</button>
-                    <button>Settle</button>
+                    <button className='blue'>+ Transaction</button>
+                    <button className='red'>Settle</button>
                 </div>
                 <div>
                 <form className='agreement-detail-form'>
