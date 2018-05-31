@@ -1,11 +1,25 @@
 import * as React from 'react';
+import { default as l2, Channel } from "../services/Layer2Service";
+import Store from "../models/Store";
 
 // import { NavLink } from 'react-router-dom';
 
 import '../App.css';
+interface Props {
+    channel:Channel | null,
+    transactions:any[]
+}
 
-class ChannelDetail extends React.Component<any, any>{
+class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, Props>{
+    constructor(props:any) {
+        super(props)
+        this.state = {channel:null, transactions:[] };
+    }
     public render() {
+        const channelID = this.props.store.page_stateB;
+        const agreementID = this.props.store.page_stateA;
+        const channel = this.state.channel;
+        if(!channel) return (<div className='explorer'/>);
         return (
             <div className='explorer'>
                 <h1>
@@ -13,8 +27,8 @@ class ChannelDetail extends React.Component<any, any>{
                           onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer 
                     </span>/ 
                     <span style={{cursor: 'pointer'}}
-                          onClick={() => this.props.store.setPage('ExplorerMain', 'AgreementDetail')}> Agreement 1 
-                    </span>/ Channel 1</h1>
+                          onClick={() => this.props.store.setPage('ExplorerMain', 'AgreementDetail')}> Agreement {agreementID} 
+                    </span>/ Channel {channelID}</h1>
                 <div className='exp-title-new red'>
                     <h2>Channel 1 Information</h2>
                     <button>+ Transaction</button>
@@ -112,6 +126,16 @@ class ChannelDetail extends React.Component<any, any>{
                 </div>
             </div>
         );
+    }
+    public async componentDidMount() {
+        //const agreements = await l2.getAllChannels(;
+        const channelId = this.props.store.page_stateB; //Object.keys(agreements)[0];
+        console.log('channelId', channelId);//, agreements[agreementId])
+
+
+        const channel:Channel = await l2.getChannel(channelId);
+        const transactions:any[] = [];
+        this.setState({channel, transactions});
     }
 }
 

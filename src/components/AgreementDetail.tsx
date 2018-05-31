@@ -27,6 +27,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
 
         const a:any = this.state.agreement;
         const cstate:string = stateName(a);
+        const agreementID = a.ID;
 
         
         const channels = this.state.channels.map((ch, index) => (
@@ -34,7 +35,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
             {console.log("====", ch, ch.ID)}
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', ch.ID)}><a href="#">Channel {ch.ID}</a></td>
+                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', agreementID, ch.ID)}><a href="#">Channel {ch.ID}</a></td>
                 <td>{ch.partyB}</td>
                 <td>N/A</td>
                 <td>N/A</td>
@@ -51,7 +52,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
             <div className='explorer'>
                 <h1><span
                         style={{cursor: 'pointer'}}
-                        onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement 1</h1>
+                        onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</span> / Agreement {agreementID}</h1>
                 <div className='exp-title-new'>
                     <h2>Agreement 1 Information</h2>
                     <button className='blue' onClick={()=>this.props.store.setPage('ChannelMain', 'CreateChannel', this.props.store.page_stateA)}>+ Channel</button>
