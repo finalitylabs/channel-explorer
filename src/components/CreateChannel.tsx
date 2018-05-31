@@ -1,8 +1,8 @@
 import * as React from "react";
-
+import Store from "../models/Store";
 import "../App.css";
 
-class CreateChannel extends React.Component<any, any> {
+class CreateChannel extends React.Component<{ store: typeof Store.Store.Type }, any> {
   constructor(props: any) {
     super(props);
     this.state = { balanceA: "0.0002", balanceB: "0.0002" };
@@ -80,12 +80,12 @@ class CreateChannel extends React.Component<any, any> {
     //"0x3afa9e75471ef7d29d58fec49e48d17ba617bba8"
     const options = {
       ID: id,
-      agreementId: s.agreementId,
+      agreementID: "" + this.props.store.page_stateA, // .agreementID,
       partyA: this.props.store.netkey,
-      partyB: s.partyB,
-      balanceA: s.balanceA,
-      balanceB: s.balanceB,
-      types: [s.type]
+      partyB: "" + s.partyB,
+      balanceA: "" + s.balanceA,
+      balanceB: "" + s.balanceB,
+      type: "" + s.type
     };
     if (parseFloat(options.balanceA) === 0) {
       alert("value can not be 0 for balance A");

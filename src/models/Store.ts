@@ -1,5 +1,5 @@
 import { flow, types } from "mobx-state-tree";
-import { default as l2, Agreement } from "../services/Layer2Service";
+import { default as l2, Agreement, Channel } from "../services/Layer2Service";
 
 //let l2: Layer2Service | null = null;
 //let localstore: LocalForage | null = null;
@@ -49,6 +49,9 @@ const Store = types
         self.page_stateA = stateA || "";
         self.page_stateB = stateB || "";
       },
+      createChannel(chan: Channel) {
+        return l2.createChannel(chan);
+      },
 
       // The typeof operator belo is the important one: this is how you interact with types introduced
       // by mobx-state-tree
@@ -62,7 +65,7 @@ const Store = types
       */
 
       createAgreement: flow(function* createAgreement(agreementParams: Agreement) {
-        return l2.createAgreement(agreementParams);
+        return yield l2.createAgreement(agreementParams);
       })
     };
   });

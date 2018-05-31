@@ -102,7 +102,7 @@ class Layer2Service {
 
     // TODO: use openGSCChannel with types
     await l2!.gsc.openChannel({ ...channelParams });
-    const chan = this.getChannel(channelParams.ID);
+    const chan = await this.getChannel(channelParams.ID);
     console.log("channel saved and fetched", chan);
     return chan;
   }
@@ -152,7 +152,7 @@ class Layer2Service {
     await l2!.createGSCAgreement({ ...agreementParams }); // copy object
 
     // const entryID = agreementParams.ID + agreementParams.dbSalt;
-    const agreement = this.getAgreement(agreementParams.ID);
+    const agreement = await this.getAgreement(agreementParams.ID);
     console.log("agreement saved and fetched", agreement);
 
     // now test closing contract
