@@ -31,15 +31,15 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
         
         const channels = this.state.channels.map((ch, index) => (
             <tr key={ch.ID}>
-            {console.log(ch.ID)}
+            {console.log("====", ch, ch.ID)}
                 <td 
                     style={{ cursor: 'pointer'}}
-                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail')}><a href="#">Channel {index+1}</a></td>
-                <td>{ch[index].ID}</td>
-                <td>{ch[index].agreementID}</td>
-                <td>{ch[index].balanceA}</td>
-                <td>X {ch[index].type[0]}</td>
-                <td>{ch[index].balanceA}</td>
+                    onClick={() => this.props.store.setPage('ExplorerMain','ChannelDetail', ch.ID)}><a href="#">Channel {ch.ID}</a></td>
+                <td>{ch.partyB}</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>{ch.balanceA}</td>
+                <td>N/A</td>
                 <td>(!)</td>
             </tr>)
         );

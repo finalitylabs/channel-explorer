@@ -92,6 +92,7 @@ class Layer2Service {
     // const id = agreementParams.ID;
     // TODO do not hardcode Wei
     // replace using salt from indexeddb
+    channelParams.type = channelParams.type.toLowerCase();
     channelParams.dbSalt = this.dbSalt;
     const a = parseFloat(channelParams.balanceA);
     const b = parseFloat(channelParams.balanceB);
