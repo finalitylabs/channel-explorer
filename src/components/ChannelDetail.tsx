@@ -20,6 +20,7 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
         const agreementID = this.props.store.page_stateA;
         const channel = this.state.channel;
         if(!channel) return (<div className='explorer'/>);
+        console.log('channel detail state', this.state);
         return (
             <div className='explorer'>
                 <h1>
@@ -134,7 +135,7 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
 
 
         const channel:Channel = await l2.getChannel(channelId);
-        const transactions:any[] = [];
+        const transactions:any[] = (await l2.getTransactions(channelId)) || [];
         this.setState({channel, transactions});
     }
 }

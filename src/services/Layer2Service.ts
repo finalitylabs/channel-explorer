@@ -76,6 +76,11 @@ class Layer2Service {
     return c;
   }
 
+  // requires full name with salt
+  public async getTransactions(channelID: string) {
+    return l2!.gsc.getTransactions(this.dbSalt + channelID);
+  }
+
   public async createChannel(channelParams: Channel): Promise<Channel> {
     /*
     let channelAlice = {
