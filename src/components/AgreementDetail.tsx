@@ -3,6 +3,7 @@ import * as React from 'react';
 import '../App.css';
 
 import { default as l2, Channel } from "../services/Layer2Service";
+import Store from "../models/Store";
 
 function stateName(obj:any):string {
     if(obj.closed === true) return "Closed";
@@ -11,13 +12,17 @@ function stateName(obj:any):string {
     return "Open Pending";
 }
 
-class AgreementDetail extends React.Component<any, {agreement:any, channels:Channel[]}> {
+interface Props {
+    store: typeof Store.Store.Type
+}
+class AgreementDetail extends React.Component<Props, {agreement:any, channels:Channel[]}> {
     constructor(props:any) {
         super(props)
         this.state = {agreement:null, channels:[] };
     }
     public render() {
-        if(!this.state || !this.state.agreement) return (<div className='explorer'/>);
+        console.log('this.state.agreement', this.state.agreement);
+        if(!this.state.agreement) return (<div className='explorer'/>);
         console.log('agreement', this.state.agreement)
 
         const a:any = this.state.agreement;
@@ -149,7 +154,9 @@ class AgreementDetail extends React.Component<any, {agreement:any, channels:Chan
     }
     public async componentDidMount() {
         const agreements = await l2.getAgreements();
-        const agreementId = Object.keys(agreements)[0];
+        const agreementId = this.props.store.page_stateA; //Object.keys(agreements)[0];
+        console.log('agreementId', agreementId, agreements[agreementId])
+
 
         const channels:Channel[] = await l2.getAllChannels(agreementId);
         this.setState({agreement: agreements[agreementId], channels});

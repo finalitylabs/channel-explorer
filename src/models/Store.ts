@@ -23,6 +23,8 @@ const Store = types
     transactions: types.array(Transation),
     connected: false,
     page: "ExplorerMain",
+    page_stateA: "",
+    page_stateB: "",
     subpage: "Explorer",
     netkey: "0x3afa9e75471ef7d29d58fec49e48d17ba617bba8",
     prvkey: "0x24ac65de524e0ac045ba6a4267d263fc2a8384dcd79dcd26163a295057f0fa87"
@@ -37,13 +39,15 @@ const Store = types
         self.prvkey = prvkey;
         l2.connect(self.prvkey);
       },
-      setPage(page: string, subpage: string): void {
-        console.log("changing page to ", page, ":", subpage);
-        console.log("page from ", prevPage, ":", prevSubpage);
+      setPage(page: string, subpage?: string, stateA?: string, stateB?: string): void {
+        console.log("changing page to " + page + ":" + subpage);
+        if (prevPage) console.log("page from ", prevPage, ":", prevSubpage);
         prevPage = self.page;
         prevSubpage = self.subpage;
         self.page = page;
-        self.subpage = subpage;
+        self.subpage = subpage || "";
+        self.page_stateA = stateA || "";
+        self.page_stateB = stateB || "";
       },
 
       // The typeof operator belo is the important one: this is how you interact with types introduced
