@@ -24,7 +24,6 @@ class App extends React.Component<{ store: typeof Store.Store.Type }> {
                 <ul>
                     <li><h2 onClick={() => this.props.store.setPage('ExplorerMain', 'Explorer')}>Explorer</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('ChannelMain', 'CreateChannel')}>ETH</h2></li>
-                    <li><h2 onClick={() => this.props.store.setPage('Hashlock', '')}>Hashlock</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('Tokens', '')}>Tokens</h2></li>
                     <li><h2 onClick={() => this.props.store.setPage('Objects', '')}>Objects</h2></li>
                 </ul>

@@ -56,6 +56,7 @@ class AgreementDetail extends React.Component<Props, {agreement:any, channels:Ch
                 <div className='exp-title-new'>
                     <h2>Agreement 1 Information</h2>
                     <button className='blue' onClick={()=>this.props.store.setPage('ChannelMain', 'CreateChannel', this.props.store.page_stateA)}>+ Channel</button>
+                    <button className='blue' onClick={()=>this.props.store.setPage('ChannelMain', 'CreateChannel', this.props.store.page_stateA)}>+ <br /> Virtual Channel</button>
                     <button className='red'>Settle</button>
                 </div>
                 <div>

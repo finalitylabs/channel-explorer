@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import Hashlock from "./Hashlock";
 import Tokens from "./Tokens";
 import Objects from "./Objects";
 
@@ -22,8 +21,7 @@ import Profile from "./Profile";
 
 
 const children = { ExplorerMain, 
-                   ChannelMain, 
-                   Hashlock, 
+                   ChannelMain,  
                    Tokens,
                    Objects, 
                    PendingAgreement, 

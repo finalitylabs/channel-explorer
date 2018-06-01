@@ -36,10 +36,6 @@ class Channel extends React.Component<any, any> {
                             </tr>
                         </thead>
                         <tbody>
-                            {/*props.data.map(row => (
-                                <tr>
-                                <td></td>
-                                </tr>))*/}
                             <tr>
                                 <td>Channel 1</td>
                                 <td>0x.....</td>

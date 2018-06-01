@@ -2,8 +2,6 @@ import * as React from 'react';
 import { default as l2, Channel } from "../services/Layer2Service";
 import Store from "../models/Store";
 
-// import { NavLink } from 'react-router-dom';
-
 import '../App.css';
 interface Props {
     channel:Channel | null,
