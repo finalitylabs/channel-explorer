@@ -1,10 +1,6 @@
-# game client
+# Channel Explorer
 
 ### getting started
-
-_To start the development server:_
-
-First change directory into the `/fantasy-client` directory.
 
 #### To start the development local server with hot reloading:
 
