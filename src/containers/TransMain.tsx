@@ -1,15 +1,15 @@
 import * as React from 'react';
 import Eth from '../components/Eth';
-import CreateChannel from '../components/CreateChannel';
+import CreateTrans from '../components/CreateTrans';
 
 import { observer } from 'mobx-react';
 import Store from '../models/Store';
 
 const children = {Eth,
-    CreateChannel};
+    CreateTrans};
 
 @observer
-class ChannelMain extends React.Component<any, any> {
+class TransMain extends React.Component<any, any> {
     
 
     public render() {
@@ -29,5 +29,5 @@ class ChannelMain extends React.Component<any, any> {
     }
 }
 
-export default ChannelMain;
+export default TransMain;
 

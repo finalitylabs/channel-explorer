@@ -43,7 +43,8 @@ class ChannelDetail extends React.Component<{ store: typeof Store.Store.Type }, 
                     </span>/ Channel {channelID}</h1>
                 <div className='exp-title-new'>
                     <h2>Channel 1 Information</h2>
-                    <button className='blue'>+ Transaction</button>
+                    <button className='blue'
+                            onClick={() => this.props.store.setPage('TransMain', 'CreateTrans')}>+ Transaction</button>
                     <button className='red'>Settle</button>
                 </div>
                 <div>

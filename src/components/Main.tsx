@@ -17,18 +17,22 @@ import CreateAgreement from './CreateAgreement';
 import ChannelDetail from './ChannelDetail';
 import CreateChannel from './CreateChannel';
 import Profile from "./Profile";
+import CreateTrans from './CreateTrans';
+import TransMain from '../containers/TransMain';
 
 
 
 const children = { ExplorerMain, 
-                   ChannelMain,  
+                   ChannelMain, 
+                   TransMain, 
                    Tokens,
                    Objects, 
                    PendingAgreement, 
                    AgreementDetail, 
                    CreateAgreement, 
                    ChannelDetail,
-                   CreateChannel };
+                   CreateChannel,
+                   CreateTrans };
 
 @observer
 class Main extends React.Component<{ store: typeof Store.Store.Type }> {
