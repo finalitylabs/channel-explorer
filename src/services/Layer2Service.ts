@@ -60,7 +60,8 @@ class Layer2Service {
   }
 
   public async getAgreements(): Promise<{ [id: string]: Agreement[] }> {
-    return l2!.gsc.getAllAgreements();
+    const data = await l2!.gsc.getAllAgreements();
+    return data || [];
   }
 
   public async getAllChannels(agreementID?: string): Promise<Channel[]> {

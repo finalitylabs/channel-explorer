@@ -9,9 +9,12 @@ class Explorer extends React.Component<any, any> {
         return "Open Pending";
     }
     public render() {
+        const header = this.getHeader();
+
         if(!this.state || !this.state.agreements) return (<div className='explorer'/>);
         if(this.state.agreementIds.length === 0) return (<div className='explorer'>
-            <h1>no agreements</h1>
+            {header}
+            <div className='exp-data-table'><h2>no agreements</h2></div>
         </div>);
 
         const ids:[string]= this.state.agreementIds as [string];
@@ -37,11 +40,7 @@ class Explorer extends React.Component<any, any> {
 
         return (
             <div className='explorer'>
-                <h1>Explorer</h1>
-                <div className='exp-title-new'>
-                    <h2>Agreements</h2>
-                    <div onClick={() => this.props.store.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
-                </div>
+                {header}
                 <div className='exp-data-table'>
                     <table>
                         <thead>
@@ -69,6 +68,13 @@ class Explorer extends React.Component<any, any> {
         const agreements = await l2.getAgreements();
         const agreementIds = Object.keys(agreements);
         this.setState({agreements, agreementIds});
+    }
+    private getHeader() {
+        return [(<h1>Explorer</h1>),
+            (<div className='exp-title-new'>
+                <h2>Agreements</h2>
+                <div onClick={() => this.props.store.setPage('ExplorerMain', 'CreateAgreement')}>+ New</div>
+            </div>)];
     }
 }
 
